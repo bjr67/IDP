@@ -33,9 +33,6 @@ net_neg_chg <- 0
 net_pos_chg <- 0
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
-	}
-else{
-		stop("Error. Please enter valid amino acid sequence.")}
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
 if (as.name(substr(sequ_ns,i,i)) == K){
