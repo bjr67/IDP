@@ -1,8 +1,14 @@
-IDP <- function(s = ""){
-  if(s == ""){
+#' Make a plot
+#' 
+#' This function creates a plot.
+#' 
+#' @export
+#' @param seqnumer of random values
+IDP <- function(ss = ""){
+  if(ss == ""){
     stop("Enter an Amino Acid Sequence.")
   }
-sequ <- toupper(s)
+sequ <- toupper(ss)
 sequ_ns <- gsub(" ", "", sequ, fixed = TRUE)
 A <- 0.37
 C <- 0.25
@@ -49,11 +55,11 @@ else if (as.name(substr(sequ_ns,i,i)) == E){
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
 netcharge <- abs(net_neg_chg - net_pos_chg)
-rh_uncorrected <- (2.16 * sequ_ns.length ^ ((0.503-(0.11*log(1-fppii_avg)))))
-rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * sequ_ns.length^(0.503-(0.11*log(1-0.012))))
+rh_chgcorrection <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * n^(0.503-(0.11*log(1-0.012))))
 
 idpcsv <- read.csv("https://public.opencpu.org/ocpu/github/bjr67/IDP/data/idpdata.csv", sep=",")
 plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
 points(n,rh_chgcorrection, col="red", pch=19)
-invisible();}
+invisible();
+}
 

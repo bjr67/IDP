@@ -30,6 +30,14 @@
     clear:both;
     text-align:center;
     padding:5px;
+}    
+    #plotdiv {
+		margin-left: 10px;
+		margin-top: 10px:
+		width: 900px;
+		height: 600px;
+		border: solid gray 1px;
+		}
 }
 </style>
 
@@ -147,7 +155,8 @@ document.getElementById("data").innerHTML =
         var s = $("#seq").val();
         
        //create the plot area on the plotdiv element
-        var req = $("#plotdiv").rplot("IDP") {
+        var req = $("#plotdiv").rplot("IDP", {
+        	ss : s
                   })
        
         //after request complete, re-enable the button 
@@ -157,15 +166,7 @@ document.getElementById("data").innerHTML =
       });
     });
     </script>
-<style>
-	#plotdiv {
-		margin-left: 10px;
-		margin-top: 10px:
-		width: 900px;
-		height: 600px;
-		border: solid gray 1px;
-		}
-</style>
+
     
   </head>
     
@@ -189,7 +190,6 @@ document.getElementById("data").innerHTML =
     <p id="error"></p>
     <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
     <div id="plotdiv"></div>
-    <br />
 
    
     
