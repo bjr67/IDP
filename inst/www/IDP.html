@@ -102,15 +102,15 @@
 	(string.substring((i-1),i)) == "T" ||
 	(string.substring((i-1),i)) == "V" ||
 	(string.substring((i-1),i)) == "W" ||
-	(string.substring((i-1),i)) == "Y" ||
-	(string.substring((i-1),i)) == " " )
+	(string.substring((i-1),i)) == "Y")||
 	{new_work_string = new_string.concat(string.substring((i-1),i));
 	 new_string = new_work_string.trim();
 	 fppii_sum = fppii_sum + eval(string.substring((i-1),i)); }
 
+	else if (string.substring((i-1),i) == " " ) {null;}
 	else {
 		document.getElementById("error").innerHTML = "Please choose capital amino acid one-letter abbreviations";}
-	
+	}
 		
 // net positive charge
 		if ((string.substring((i-1),i) == "K")) {
