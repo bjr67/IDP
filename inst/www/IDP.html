@@ -162,7 +162,7 @@ document.getElementById("data").innerHTML =
         
         //create plot area, plotdiv
         var req = $("#plotdiv").rplot("IDP", {
-        
+        	ss : ss
         })
         
         //if R returns an error, alert the error message
@@ -179,7 +179,7 @@ document.getElementById("data").innerHTML =
     </script>
     <style>
     	#plotdiv {
-    		position:relative;
+    		position: relative;
     		width: 600px;
     		height: 400px;
     		border: solid gray 1px;
