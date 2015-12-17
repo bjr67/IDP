@@ -80,6 +80,7 @@
 	var tpc = 0;
 	var tnc = 0;
  	var i;
+ 	var new_string = "";
  	for (i = 1; i < string.length + 1; i++)  {
 	if (((string.substring((i-1),i) == "A" || 
 	(string.substring((i-1),i)) == "C" )) || 
@@ -100,7 +101,11 @@
 	(string.substring((i-1),i)) == "T" ||
 	(string.substring((i-1),i)) == "V" ||
 	(string.substring((i-1),i)) == "W" ||
-	(string.substring((i-1),i)) == "Y") {null;}
+	(string.substring((i-1),i)) == "Y" ||
+	(string.substring((i-1),i)) == " " )
+	{new_string = new_string.concat(string.substring((i-1),i))
+	new_string = new_string.trim();}
+
 	else {
 		document.getElementById("error").innerHTML = "Please choose capital amino acid one-letter abbreviations";}
 	
