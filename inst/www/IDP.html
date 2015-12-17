@@ -164,7 +164,7 @@ document.getElementById("data").innerHTML =
         //create plot area, plotdiv
         var req = $("#plotdiv").rplot("IDP", {
         ss : ss
-        }
+        })
         
         req.fail(function(){
         	alert(req.responseText);
@@ -200,7 +200,7 @@ document.getElementById("data").innerHTML =
     	<br>
 	<br>
 	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
-  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=""><br>
+  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=" "><br>
 	
 <br>
   
