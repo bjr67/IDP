@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<!-- Script by BJR 12/16/2016 -->
-<!-- Reads a sequence and maps the transformation from amino acid to propensity values (Hilser) -->
-	<head>
+<head>
 
+<!-- Reads a sequence and maps the transformation from amino acid to propensity values (Hilser) -->
+	
 <style>
 #header {
     background-color:black;
@@ -30,10 +30,18 @@
     clear:both;
     text-align:center;
     padding:5px;
+}    
+    #plotdiv {
+		margin-left: 10px;
+		margin-top: 10px:
+		width: 900px;
+		height: 600px;
+		border: solid gray 1px;
+		}
 }
 </style>
 
-    <title>IDPs</title>
+<title>IDPs</title>
      <script>
 	function myFunction() {
 	//      first show relationship of AA and propensity
@@ -54,16 +62,16 @@
         	var R = 0.38;
         	var S = 0.24;
         	var T = 0.32;
-        	var V = 0.39;
+         	var V = 0.39;
         	var W = 0.25;
         	var Y = 0.25;
 
  //import sequence
 
- 	var string2;
-	string2 = document.getElementById("seq");
- 	string2 = string2.replace(/^\s+|\s+$/gm,'');
- 	string2 = string2.toUpperCase;
+ 	var string;
+ 	string = document.getElementById("seq").value;
+ 	string = string.trim();
+ 	string = string.toUpperCase();
 
 // determine fppii, total positive charge, total negative charge
 
@@ -71,64 +79,70 @@
 	var tpc = 0;
 	var tnc = 0;
  	var i;
- 	for (i = 1; i < string2.length + 1; i++)  {
-	if (((string2.substring((i-1),i) == "A" || 
-	(string2.substring((i-1),i)) == "C")) || 
-	(string2.substring((i-1),i)) == "D" ||
-	(string2.substring((i-1),i)) == "E" ||
-	(string2.substring((i-1),i)) == "F" ||
-	(string2.substring((i-1),i)) == "G" ||
-	(string2.substring((i-1),i)) == "H" ||
-	(string2.substring((i-1),i)) == "I" ||
-	(string2.substring((i-1),i)) == "K" ||
-	(string2.substring((i-1),i)) == "L" ||
-	(string2.substring((i-1),i)) == "M" ||
-	(string2.substring((i-1),i)) == "N" ||
-	(string2.substring((i-1),i)) == "P" ||
-	(string2.substring((i-1),i)) == "Q" ||
-	(string2.substring((i-1),i)) == "R" ||
-	(string2.substring((i-1),i)) == "S" ||
-	(string2.substring((i-1),i)) == "T" ||
-	(string2.substring((i-1),i)) == "V" ||
-	(string2.substring((i-1),i)) == "W" ||
-	(string2.substring((i-1),i)) == "Y"||
-	(string2.substring((i-1),i)) == " "){}
+ 	for (i = 1; i < string.length + 1; i++)  {
+	if (((string.substring((i-1),i) == "A" || 
+	(string.substring((i-1),i)) == "C" )) || 
+	(string.substring((i-1),i)) == "D" ||
+	(string.substring((i-1),i)) == "E" ||
+	(string.substring((i-1),i)) == "F" ||
+	(string.substring((i-1),i)) == "G" ||
+	(string.substring((i-1),i)) == "H" ||
+	(string.substring((i-1),i)) == "I" ||
+	(string.substring((i-1),i)) == "K" ||
+	(string.substring((i-1),i)) == "L" ||
+	(string.substring((i-1),i)) == "M" ||
+	(string.substring((i-1),i)) == "N" ||
+	(string.substring((i-1),i)) == "P" ||
+	(string.substring((i-1),i)) == "Q" ||
+	(string.substring((i-1),i)) == "R" ||
+	(string.substring((i-1),i)) == "S" ||
+	(string.substring((i-1),i)) == "T" ||
+	(string.substring((i-1),i)) == "V" ||
+	(string.substring((i-1),i)) == "W" ||
+	(string.substring((i-1),i)) == "Y") {null;}
 	else {
-		document.getElementById("data").innerHTML = "Please choose amino acid one-letter abbreviations.";}
+		document.getElementById("error").innerHTML = "Please choose capital amino acid one-letter abbreviations";}
 	
-		fppii_sum = fppii_sum + eval(string2.substring((i-1),i)); 
+		fppii_sum = fppii_sum + eval(string.substring((i-1),i)); 
 // net positive charge
-		if ((string2.substring((i-1),i) == "K")) {
+		if ((string.substring((i-1),i) == "K")) {
 			tpc = tpc + 1;}
-		if((string2.substring((i-1),i) == "R")) {
+		if((string.substring((i-1),i) == "R")) {
 			tpc = tpc + 1;}
 // net negative charge 
-		if ((string2.substring((i-1),i) == "D")) {
+		if ((string.substring((i-1),i) == "D")) {
                 	tnc = tnc + 1;}
-        	if((string2.substring((i-1),i) == "E")) {
+        	if((string.substring((i-1),i) == "E")) {
                 	tnc = tnc + 1;}
 }
 	var netcharge = tpc - tnc;
-	var fppii_avg = fppii_sum / string2.length;
-	var rh_uncorrected = 2.16 * Math.pow(string2.length, (0.503-(0.11*Math.log(1-fppii_avg))));
-	var rh_chgcorrection = 2.16 * Math.pow(string2.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-0.012))));
+	var fppii_avg = fppii_sum / string.length;
+	var rh_uncorrected = 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
+	var rh_chgcorrection = 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * (string.length^ (0.503-(0.11*Math.log(1-0.012))));
 // output
 document.getElementById("data").innerHTML = 
-"Sequence : " + string2 + "<br>" + 
-"Length (N) : " + string2.length + "<br>" + 
+"Sequence : " + string + "<br>" + 
+"Length (N) : " + string.length + "<br>" + 
 "Chain averaged Fppii : " + fppii_avg + "<br>" +
 "Total positive charge (K & R): " + tpc + "<br>" +
 "Total negative charge (D & E): " + tnc + "<br>" +
 "Net charge : " + netcharge + "<br>" +
 "Hydrodynamic Radius, uncorrected : " + rh_uncorrected + "<br>" +
 "Hydrodynamic Radius, corrected : " + rh_chgcorrection
-"String 2 : " + string2
 ;}
 
 </script>
+	
     <!-- Include order: first jquery, then opencpu.js, and then your code -->
     <script src="opencpu/jquery-1.10.2.min.js"></script>
     <script src="opencpu/opencpu-0.4.js"></script>
+    
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="jqueryui/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet" media="screen">
+
+<script src="bootstrap/js/bootstrap.js"> </script>
+<script src="jqueryui/jquery-ui-1.10.3.custom.js"> </script>
+
     <script>
     //init this script when the page has loaded
     $(document).ready(function(){
@@ -136,17 +150,15 @@ document.getElementById("data").innerHTML =
         //disable the button to prevent multiple clicks
         $("#submitbutton").attr("disabled", "disabled");
         
+  
         //read the value for 'myname'
         var s = $("#seq").val();
         
-        //perform the request
-        var req = ocpu.rpc("IDP", {
-          ss : s
-        }, function(output){
-          $("#output").text(output.message);
-        });
+       //create the plot area on the plotdiv element
+        var req = $("#plotdiv").rplot("IDP", {
+        	ss : s
+                  })
        
-        
         //after request complete, re-enable the button 
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
@@ -154,32 +166,32 @@ document.getElementById("data").innerHTML =
       });
     });
     </script>
-    
- 
+
     
   </head>
     
-  <body>
+<body>
   <div id="header">
 		<h1>Calculation of Rh of IDPs</h1>
 	</div>
     	<br>
 	<br>
-	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the peptides of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
-    <form id="frm1" action="form_action.asp name = "TESTING">
-  		Enter IDP sequence: <input id="seq" type="text" name="IDP" value=" "><br>
-	</form>
+	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
+  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=""><br>
+	
+<br>
+  
 
     <button id="submitbutton" type="button" onclick="myFunction()">Submit</button>
     
    
-
     <p id="data"></p>
     <p id="output"></p>
-    <br />
+    <p id="error"></p>
+    <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
+    <div id="plotdiv"></div>
 
    
-    </ul>
     
   </body>
 </html>
