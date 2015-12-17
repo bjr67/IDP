@@ -53,8 +53,8 @@ rh_uncorrected <- (2.16 * sequ_ns.length ^ ((0.503-(0.11*log(1-fppii_avg)))))
 rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * sequ_ns.length^(0.503-(0.11*log(1-0.012)))
 
 
-idp <- read.csv("../data/idpdata.csv", sep=",")
-print(plot(idp$N,idp$Rh, pch=19, xlab="N", ylab = "Rh")+
+idpcsv <- read.csv("../data/idpdata.csv", sep=",")
+print(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+
 par(new=T)+
 plot(n, rh_chgcorrection, col="red")+
 par(new=F)}
