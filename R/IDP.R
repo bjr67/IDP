@@ -62,8 +62,8 @@ idppos = c(2,2,2,3,2,2,10,9,7,8,34,23,8,13,14,23,15,25,29,6,16,26)
 idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.37,0.363,0.412,0.356,0.403,0.374,0.364,0.351,0.376,0.39,0.413,fppii_avg)
 
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
-plot(idp.df$idpn,idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(0,150), ylim = c(0,50))
-points(n,rh_chgcorrection, col="red", pch=19)
-invisible();
+
+plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(0,150), ylim = c(0,50))
+points(n, rh_chgcorrection, col="red", pch=19)
 }
 
