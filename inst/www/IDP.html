@@ -156,9 +156,14 @@ document.getElementById("data").innerHTML =
         var s = $("#seq").val();
         
        //create the plot area on the plotdiv element
-        var req = $("#plotdiv").rplot("IDP").fail(function(){
-                  alert(req.responseText);
-                  });
+        var req = $("#plotdiv").rplot("IDP", {
+        ss: seq  
+                  })
+		        
+		        //if R returns an error, alert the error message
+        req.fail(function(){
+          alert("Server error: " + req.responseText);
+        });
        
         //after request complete, re-enable the button 
         req.always(function(){
