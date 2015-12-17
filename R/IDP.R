@@ -47,8 +47,15 @@ else if (as.name(substr(sequ_ns,i,i)) == E){
 	}
 }
 fppii_avg <- fppii/(nchar(sequ_ns))
-n = nchar(sequ_ns)
+n <- nchar(sequ_ns)
+netcharge <- abs(net_neg_chg - net_pos_chg)
+rh_uncorrected <- (2.16 * sequ_ns.length ^ ((0.503-(0.11*log(1-fppii_avg)))))
+rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * sequ_ns.length^(0.503-(0.11*log(1-0.012)))
 
 
-print(plot(n,net_neg_chg))
-}
+setwd(../data/)
+idp <- read.csv("idpdata.csv", sep=",")
+print(plot(idp$N,idp$Rh, pch=19, xlab="N", ylab = "Rh")+
+par(new=T)+
+plot(n, rh_chgcorrection, col="red")+
+par(new=F)}

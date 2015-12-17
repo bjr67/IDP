@@ -109,8 +109,8 @@
 }
 	var netcharge = tpc - tnc;
 	var fppii_avg = fppii_sum / string.length;
-	var rh_uncorrected = 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
-	var rh_chgcorrection = 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-0.012))));
+	var rh_uncorrected = 2.16 * Math.pow(string.length, (0.503-(0.11*log(1-fppii_avg))));
+	var rh_chgcorrection = 2.16 * Math.pow(string.length, (0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * (string.length^ (0.503-(0.11*log(1-0.012))));
 // output
 document.getElementById("data").innerHTML = 
 "Sequence : " + string + "<br>" + 
@@ -181,6 +181,7 @@ document.getElementById("data").innerHTML =
     <p id="data"></p>
     <p id="output"></p>
     <p id="error"></p>
+    <br><br>The following graph shows the measured Rh of 22 proteins and their respective number of residues(from <a href="../data/idpdata.csv"</a>) The red dot is the input sequence.
     <p id="plotdiv"></p>
     <br />
 

@@ -1,0 +1,214 @@
+setwd("~/Desktop/nanotech/")
+year <- read.csv('all_tot_ratio.csv')
+year
+year <- read.csv('by_year_states copy.csv')
+yyear
+year
+year2 <- na.rm(year)
+na.omit(year)
+na.exclude(year)
+year <- read.csv('by_year_states.csv')
+year
+hist(year)
+hist(year$Year)
+barplot(year)
+barplot(year$Year)
+barplot(year$X.fem_ON)
+library(ggplot2)
+ggplot(mtcars, aes(factor(cyl), fill=factor(am))) + geom_bar() + facet_grid(am~vs)
+barplot(year$X.fem_ON)
+par(mfrow=c(2,2,))
+par(mfrow=c(2,2))
+barplot(year$X.fem_ON, xlab = "Year")
+mtcars$gear
+counts <- table(mtcars$gear)
+counts
+barplot(year$X.fem_ON, year$X.fem_QC, main = "% Female Author", xlab = "Year")
+par(mfrow=c(1,1))
+barplot(year$X.fem_ON, year$X.fem_QC, main = "% Female Author", xlab = "Year")
+plot(year$Year)
+plot(year$Year, year$X.fem_ON)
+plot(year$Year, year$X.fem_ON, year$X.fem_QC)
+plot(year$Year, year$X.fem_ON)
+xspline(year$Year, year$X.fem_ON)
+barplot(year$X.fem_ON, xlab = "Year")
+table(mtcars$vs, mtcars$gear)
+table(year$Year, year$X.fem_ON)
+table(year$Year, year$X.fem_ON, year$X.fem_QC)
+c <- table(year$Year, year$X.fem_ON, year$X.fem_QC)
+boxplot(c)
+boxplot(c, beside=TRUE)
+names(year$X.fem_ON) <- c(year$Year)
+_
++
+barplot(year$X.fem_ON)
+barplot(year$X.fem_ON, las = 2)
+mids <- barplot(year$X.fem_ON, xlab="Year")
+axis(1,at=mids, labels= c(year$Year))
+axis(1,at=mids/3, labels= c(year$Year))
+mids <- barplot(year$X.fem_ON, xlab="Year")
+axis(1,at=mids/3, labels= c(year$Year))
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_ON, xlab="Year")
+axis(1,at=mids, labels= c(year$Year))
+plot(year$Year, year$X.fem_ON)
+par(mfrow=c(2,2))
+mids <- barplot(year$X.fem_ON, xlab="Year")
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_QC, xlab="Year")
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_QC, xlab="Year")
+mids <- barplot(year$X.fem_ON, xlab="Year", ylab="% Female Authors", main = "Ontario")
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_QC, xlab="Year", ylab="% Female Authors", main = "Quebec")
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_oth, xlab="Year", ylab="% Female Authors", main = "Other")
+mids <- barplot(year$X.fem_CN, xlab="Year", ylab="% Female Authors", main = "Canada")
+state <- read.csv("~/Desktop/nanotech/nanotech_draft1/statebypercentfem.csv")
+state
+par(mfrow=c(1,1))
+mids <- barplot(state$X.total_fem, xlab="Province", ylab="% Female Authors", main = "Percent Female Author by State")
+axis(1,at=mids, labels= c(state$province))
+axis(1,at=mids, labels= c(states$province))
+mids <- barplot(state$X.total_fem, xlab="Province", ylab="% Female Authors", main = "Percent Female Author by State")
+axis(1,at=mids, labels= c(states$province))
+axis(1,at=mids, labels= c(state$province))
+state$province
+mids <- barplot(state$X.total_fem, xlab="Province", ylab="% Female Authors", main = "Percent Female Author by State")
+axis(1,at=mids, labels= c("NB", "NS","SK", "MB", "AB", "BC", "QC", "ON" ))
+mids <- barplot(state$X.total_fem, xlab="Province", ylab="% Female Authors", main = "Percent Female Author by Province)
+)
+""
+"'"
+mids <- barplot(state$X.total_fem, xlab="Province", ylab="% Female Authors", main = "Percent Female Author by Province")
+axis(1,at=mids, labels= c("NB", "NS","SK", "MB", "AB", "BC", "QC", "ON" ))
+popvsdis <- read.csv("popvsdis.csv")
+popvsdis
+popvsdis$State_pop_2011_census
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem)
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19)
+xspline(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19)
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19)
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 100,000")
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 1/100,000")
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 1/100,000", ylab="% Female Authors")
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 1/100,000", ylab="% Female Authors",main="Percent Female Authors and Population, by Province")
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 1/100,000", ylab="% Female Authors",main="Percent Female Authors and Population, by Province",col="red")
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 1/100,000", ylab="% Female Authors",main="Percent Female Authors and Population, by Province",col="rainbow")
+plot(popvsdis$State_pop_2011_census,popvsdis$X.total_fem, pch=19,xlab="Province Population, 1/100,000", ylab="% Female Authors",main="Percent Female Authors and Population, by Province")
+clear
+clear()
+setwd()
+setwd("~")
+data <- read.csv("~/Desktop/nanotech/all_tot_ratio.csv")
+plot(data)
+data
+plot(data$Tot, data$percent)
+Tot <- data$Tot
+per <- data$percent
+per
+Tot
+plot(per, Tot)
+plot(per, Tot, xlab =" edifjnd")
+summary(per)
+cor.test(Tot, per)
+cor.test(Tot, per, method="spearman")
+cor.test(Tot, per, method="kendall")
+par(mfrow=c(2,2))
+mids <- barplot(year$X.fem_ON, xlab="Year", ylab="% Female Authors", main = "Ontario")
+axis(1,at=mids, labels= c("NB", "NS","SK", "MB", "AB", "BC", "QC", "ON" ))
+axis(1,at=mids, labels= c(state$province))
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_ON, xlab="Year", ylab="% Female Authors", main = "Quebec")
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_oth, xlab="Year", ylab="% Female Authors", main = "Other")
+axis(1,at=mids, labels= c(year$Year))
+mids <- barplot(year$X.fem_CN, xlab="Year", ylab="% Female Authors", main = "Canada")
+axis(1,at=mids, labels= c(year$Year))
+c(0.643, 2.447, 2.586, 0.995, 0.543, 0.4, 0.321, 0.279, 0.247, 0.241)
+x <- c(0.643, 2.447, 2.586, 0.995, 0.543, 0.4, 0.321, 0.279, 0.247, 0.241)
+kruskal.test(x)
+ks.test(x)
+data <- x
+lowerq = quantile(data)[2]#
+upperq = quantile(data)[4]
+iqr = upperq - lowerq #Or use IQR(data)
+mild.threshold.upper = (iqr * 1.5) + upperq#
+mild.threshold.lower = lowerq - (iqr * 1.5)
+extreme.threshold.upper = (iqr * 3) + upperq#
+extreme.threshold.lower = lowerq - (iqr * 3)
+mild.threshold.lower
+mild.threshold.upper
+install.packages('outliers')
+library(outliers)
+grubbs.test(x)
+grubbs.test(x, type = 20)
+stdev(x)
+summary(x)
+qqnorm(x)
+x
+install.packages("shiny")
+install.packages("FastRWeb")
+library(Cairo)
+install.packages('Rserve')
+system(paste("cd",system.file(package="FastRWeb"),"&& install.sh"))
+library(devtools)
+install.packages(dev.capabilities)
+install.packages(devtools)
+install.packages("devtools")
+install_github("appdemo", "opencpu")
+library(devtools)
+install_github("appdemo", "opencpu")
+library(opencpu)
+install_github("appdemo")
+install_github("opencpu")
+install_github("opencpu/appdemo")
+library(opencpu)
+install_github("opencpu")
+install_github("opencpu/appdemo")
+install_github("appdemo/opencpu")
+library(opencpu)
+install_github("opencpu")
+install.packages("opencpu")
+library(opencpu)
+opencpu$browse("/library/appdemo/www")
+function (myname = "") #
+{#
+    if (myname == "") {#
+        stop("Tell me your name!")#
+    }#
+    list(message = paste("hello", myname, "! This is", R.Version()$version.string))#
+}#
+<environment: namespace:appdemo>
+function (myname = "") #
+{#
+    if (myname == "") {#
+        stop("Tell me your name!")#
+    }#
+    list(message = paste("hello", myname, "! This is", R.Version()$version.string))#
+}
+setwd("~/Desktop/IDP/")
+setwd("~/Desktop/IDP/data/")
+idp <- read.csv("idpdata.csv", sep",")
+idp <- read.csv("idpdata.csv", sep=",")
+idp
+plot(N,Rh)
+plot(idp$N,idp$Rh)
+plot(idp$N,idp$Rh, points(19))
+plot(idp$N,idp$Rh, points(19))
+plot(idp$N,idp$Rh)+ points(19)
+plot(idp$N,idp$Rh)+ pch(19)
+plot(idp$N,idp$Rh,pch(19))
+plot(idp$N,idp$Rh,pch=19)
+plot(idp$N,idp$Rh,pch=19, xlab= "N", ylab="Rh")
+plot(idp$N,idp$Rh,pch=19, xlab= "N", ylab="Rh")
+par(new=T)
+plot(idp$N,idp$Rh,pch=19, xlab= "N", ylab="Rh")
+par(new=T)
+plot(idp$N, idp$Rh),pch=19, col="red" xlab= "N", ylab="Rh")
+plot(idp$N, idp$Rh,pch=19, col="red" xlab= "N", ylab="Rh")
+plot(idp$N, idp$Rh,pch=19, col="red", xlab= "N", ylab="Rh")
+dd <- 3 +
+4+
+5
+dd
