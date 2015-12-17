@@ -157,15 +157,13 @@ document.getElementById("data").innerHTML =
         //disable the button to prevent multiple clicks
         $("#submitbutton").attr("disabled", "disabled");
         
-        //read the value for 'myname'
+        //read the value for 'seq'
         var ss = $("#seq").val();
         
-        //perform the request
-        var req = ocpu.rpc("IDP", {
+        //create plot area, plotdiv
+        var req = $(:"#plotdiv").rplot("IDP", {
           ss : ss
-        }, function(output){
-          $("#output").text(output.message);
-        });
+        })
         
         //if R returns an error, alert the error message
         req.fail(function(){
@@ -179,8 +177,14 @@ document.getElementById("data").innerHTML =
       });
     });
     </script>
-
-    
+    <style>
+    	#plotdiv {
+    		position:relative;
+    		width: 600px;
+    		height: 400px;
+    		border: solid gray 1px;
+		}
+    </style>
   </head>
     
 <body>
@@ -202,7 +206,7 @@ document.getElementById("data").innerHTML =
     <p id="output"></p>
     <p id="error"></p>
     <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
-    
+    <div id="plotdiv"></div>
 
    
     
