@@ -152,11 +152,11 @@ document.getElementById("data").innerHTML =
         $("#submitbutton").attr("disabled", "disabled");
         
         //read the value for 'myname'
-        var s = $("#seq").val();
+        var ss = $("#seq").val();
         
         //perform the request
         var req = ocpu.rpc("IDP", {
-          ss : s
+          ss : ss
         }, function(output){
           $("#output").text(output.message);
         });
@@ -196,7 +196,7 @@ document.getElementById("data").innerHTML =
     <p id="output"></p>
     <p id="error"></p>
     <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
-    <div id="plotdiv"></div>
+    
 
    
     
