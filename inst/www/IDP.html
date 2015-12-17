@@ -161,8 +161,8 @@ document.getElementById("data").innerHTML =
         var ss = $("#seq").val();
         
         //create plot area, plotdiv
-        var req = $("#plotdiv").rplot("IDP", {
-        	ss : ss
+        var req = $("#plotdiv").rplot("IDP").fail(function(){
+        	alert(req.responseText);
         })
         
         //if R returns an error, alert the error message
@@ -179,9 +179,10 @@ document.getElementById("data").innerHTML =
     </script>
     <style>
     	#plotdiv {
-    		position: relative;
-    		width: 600px;
-    		height: 400px;
+    		margin-left: 10px;
+    		margin-top: 10px;
+    		width: 900px;
+    		height: 600px;
     		border: solid gray 1px;
 		}
     </style>
