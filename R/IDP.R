@@ -56,7 +56,7 @@ rh_chgcorrection <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcha
 
 idpcsv <- read.csv("https://public.opencpu.org/ocpu/github/bjr67/IDP/data/idpdata.csv", sep=",")
 list(
-	message= paste(idpcsv,fppii_avg, n, netcharge, rh_chgcorrection)
+	message= paste(idpcsv$N)
 	)
 }
 
