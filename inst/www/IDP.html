@@ -142,18 +142,14 @@ document.getElementById("data").innerHTML =
         //disable the button to prevent multiple clicks
         $("#submitbutton").attr("disabled", "disabled");
         
-        
-  //optional, requires jquery-ui.
- 	 $("#plotdiv").resizable()
   
         //read the value for 'myname'
         var s = $("#seq").val();
         
        //create the plot area on the plotdiv element
-        var req = $("#plotdiv").rplot("IDP", {
+        var req = $("#plotdiv").rplot("IDP") {
                   })
        
-        
         //after request complete, re-enable the button 
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
@@ -163,9 +159,10 @@ document.getElementById("data").innerHTML =
     </script>
 <style>
 	#plotdiv {
-		position: relation;
-		width: 600px;
-		height: 400px;
+		margin-left: 10px;
+		margin-top: 10px:
+		width: 900px;
+		height: 600px;
 		border: solid gray 1px;
 		}
 </style>
