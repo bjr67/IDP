@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Reads a sequence and maps the transformation from amino acid to propensity values (Hilser) -->
+	
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+</style>
+
+<title>IDPs</title>
+     <script>
+	function myFunction() {
+	//      first show relationship of AA and propensity
+        	var A = 0.37;
+        	var C = 0.25;
+        	var D = 0.30;
+        	var E = 0.42;
+        	var F = 0.17;
+        	var G = 0.13;
+        	var H = 0.20;
+        	var I = 0.39;
+        	var K = 0.56;
+        	var L = 0.24;
+        	var M = 0.36;
+        	var N = 0.27;
+        	var P = 1.00;
+        	var Q = 0.53;
+        	var R = 0.38;
+        	var S = 0.24;
+        	var T = 0.32;
+         	var V = 0.39;
+        	var W = 0.25;
+        	var Y = 0.25;
+
+ //import sequence
+
+ 	var string;
+ 	string = document.getElementById("seq").value;
+ 	string = string.trim();
+ 	string = string.toUpperCase();
+
+// determine fppii, total positive charge, total negative charge
+
+	var fppii_sum = 0;
+	var tpc = 0;
+	var tnc = 0;
+ 	var i;
+ 	for (i = 1; i < string.length + 1; i++)  {
+	if (((string.substring((i-1),i) == "A" || 
+	(string.substring((i-1),i)) == "C" )) || 
+	(string.substring((i-1),i)) == "D" ||
+	(string.substring((i-1),i)) == "E" ||
+	(string.substring((i-1),i)) == "F" ||
+	(string.substring((i-1),i)) == "G" ||
+	(string.substring((i-1),i)) == "H" ||
+	(string.substring((i-1),i)) == "I" ||
+	(string.substring((i-1),i)) == "K" ||
+	(string.substring((i-1),i)) == "L" ||
+	(string.substring((i-1),i)) == "M" ||
+	(string.substring((i-1),i)) == "N" ||
+	(string.substring((i-1),i)) == "P" ||
+	(string.substring((i-1),i)) == "Q" ||
+	(string.substring((i-1),i)) == "R" ||
+	(string.substring((i-1),i)) == "S" ||
+	(string.substring((i-1),i)) == "T" ||
+	(string.substring((i-1),i)) == "V" ||
+	(string.substring((i-1),i)) == "W" ||
+	(string.substring((i-1),i)) == "Y") {null;}
+	else {
+		document.getElementById("error").innerHTML = "Please choose capital amino acid one-letter abbreviations";}
+	
+		fppii_sum = fppii_sum + eval(string.substring((i-1),i)); 
+// net positive charge
+		if ((string.substring((i-1),i) == "K")) {
+			tpc = tpc + 1;}
+		if((string.substring((i-1),i) == "R")) {
+			tpc = tpc + 1;}
+// net negative charge 
+		if ((string.substring((i-1),i) == "D")) {
+                	tnc = tnc + 1;}
+        	if((string.substring((i-1),i) == "E")) {
+                	tnc = tnc + 1;}
+}
+	var netcharge = tpc - tnc;
+	var fppii_avg = fppii_sum / string.length;
+	var rh_uncorrected = 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
+	var rh_chgcorrection = 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * Math.pow(string.length, (0.503-(0.11*Math.log(1-0.012))));
+// output
+document.getElementById("data").innerHTML = 
+"Sequence : " + string + "<br>" + 
+"Length (N) : " + string.length + "<br>" + 
+"Chain averaged Fppii : " + fppii_avg + "<br>" +
+"Total positive charge (K & R): " + tpc + "<br>" +
+"Total negative charge (D & E): " + tnc + "<br>" +
+"Net charge : " + netcharge + "<br>" +
+"Hydrodynamic Radius, uncorrected : " + rh_uncorrected + "<br>" +
+"Hydrodynamic Radius, corrected : " + rh_chgcorrection
+;}
+
+</script>
+	
+    <!-- Include order: first jquery, then opencpu.js, and then your code -->
+    <script src="opencpu/jquery-1.10.2.min.js"></script>
+    <script src="opencpu/opencpu-0.4.js"></script>
+    <script>
+    //init this script when the page has loaded
+    $(document).ready(function(){
+      $("#submitbutton").on("click", function(){
+        //disable the button to prevent multiple clicks
+        $("#submitbutton").attr("disabled", "disabled");
+        
+        //read the value for 'myname'
+        var s = $("#seq").val();
+        
+        //perform the request
+        var req = ocpu.rpc("IDP", {
+          s : s
+        }, function(output){
+          $("#output").text(output.message);
+        });
+       
+        
+        //after request complete, re-enable the button 
+        req.always(function(){
+          $("#submitbutton").removeAttr("disabled")
+        });
+      });
+    });
+    </script>
+ 
+    
+  </head>
+    
+<body>
+  <div id="header">
+		<h1>Calculation of Rh of IDPs</h1>
+	</div>
+    	<br>
+	<br>
+	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the peptides of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
+  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=""><br>
+	
+<br>
+  
+
+    <button id="submitbutton" type="button" onclick="myFunction()">Submit</button>
+    
+   
+    <p id="data"></p>
+    <p id="output"></p>
+    <p id="error"></p>
+    <br />
+
+   
+    
+  </body>
+</html>
