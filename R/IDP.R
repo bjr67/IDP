@@ -50,5 +50,5 @@ fppii_avg <- fppii/(nchar(sequ_ns))
 n = nchar(sequ_ns)
 
 
-list(message = paste(seq_ns))
+plot(n,net_neg_chg)
 }

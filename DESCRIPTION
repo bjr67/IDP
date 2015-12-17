@@ -1,8 +1,8 @@
-Package: IDP1
+Package: IDP
 Type: Package
 Title: Molecular Origins of Intrinsically Disordered Protein Dynamics
 Version: 0.1
-Date: 2015-11-11
+Date: 2016-12-17
 Authors: Benjamin Ricard, Maria Tomasso, Steven Whitten
 Maintainer: Ben <bjr67@txstate.edu>/ Steven <sw50@txstate.edu>
 Description: This package predicts the contribution of polyproline-II propensities and electrostatic effects to the structure of intrinisically disordered proteins. 
