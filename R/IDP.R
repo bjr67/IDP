@@ -52,7 +52,7 @@ netcharge <- abs(net_neg_chg - net_pos_chg)
 rh_uncorrected <- (2.16 * sequ_ns.length ^ ((0.503-(0.11*log(1-fppii_avg)))))
 rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * sequ_ns.length^(0.503-(0.11*log(1-0.012))))
 
-idpcsv <- read.csv("../data/idpdata.csv", sep=",")
+idpcsv <- read.csv("https://public.opencpu.org/ocpu/github/bjr67/IDP/data/idpdata/", sep=",")
 print(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+
 par(new=T)+
 plot(n, rh_chgcorrection, col="red")+
