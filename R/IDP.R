@@ -4,7 +4,7 @@
 #' 
 #' @export
 #' @param seqnumer of random values
-IDP <- function(ss){
+IDP <- function(ss = ""){
 sequ <- toupper(ss)
 sequ_ns <- gsub(" ", "", sequ, fixed = TRUE)
 A <- 0.37
