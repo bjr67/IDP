@@ -144,27 +144,28 @@ document.getElementById("data").innerHTML =
 <script src="bootstrap/js/bootstrap.js"> </script>
 <script src="jqueryui/jquery-ui-1.10.3.custom.js"> </script>
 
-    <script>
+<script>
     //init this script when the page has loaded
     $(document).ready(function(){
       $("#submitbutton").on("click", function(){
         //disable the button to prevent multiple clicks
         $("#submitbutton").attr("disabled", "disabled");
         
-  
         //read the value for 'myname'
-        var s = $("#seq").val();
+        var myname = $("#namefield").val();
         
-       //create the plot area on the plotdiv element
-        var req = $("#plotdiv").rplot("IDP", {
-        ss: seq  
-                  })
-		        
-		        //if R returns an error, alert the error message
+        //perform the request
+        var req = ocpu.rpc("hello", {
+          myname : myname
+        }, function(output){
+          $("#output").text(output.message);
+        });
+        
+        //if R returns an error, alert the error message
         req.fail(function(){
           alert("Server error: " + req.responseText);
         });
-       
+        
         //after request complete, re-enable the button 
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
