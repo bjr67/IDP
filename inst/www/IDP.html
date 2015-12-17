@@ -162,7 +162,11 @@ document.getElementById("data").innerHTML =
         var ss = $("#seq").val();
         
         //create plot area, plotdiv
-        var req = $("#plotdiv").rplot("IDP").fail(function(){
+        var req = $("#plotdiv").rplot("IDP", {
+        ss : ss
+        }
+        
+        req.fail(function(){
         	alert(req.responseText);
         })
         
