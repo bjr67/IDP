@@ -66,7 +66,6 @@ idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(0,150), ylim = c(0,50))
-points(n, rh_chgcorrection, col="red", pch=19)
 invisible();
 }
 
