@@ -45,7 +45,7 @@ else if (as.name(substr(sequ_ns,i,i)) == D){
 else if (as.name(substr(sequ_ns,i,i)) == E){
 	net_pos_chg <- net_pos_chg + 1
 	}
-
+}
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
 netcharge <- abs(net_neg_chg - net_pos_chg)
@@ -55,4 +55,4 @@ rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 
 idpcsv <- read.csv("https://public.opencpu.org/ocpu/github/bjr67/IDP/data/idpdata.csv", sep=",")
 plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
 points(n,rh_chgcorrection, col="red", pch=19)}
-}
+
