@@ -45,7 +45,7 @@ else if (as.name(substr(sequ_ns,i,i)) == D){
 else if (as.name(substr(sequ_ns,i,i)) == E){
 	net_pos_chg <- net_pos_chg + 1
 	}
-}
+
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
 netcharge <- abs(net_neg_chg - net_pos_chg)
