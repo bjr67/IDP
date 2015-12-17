@@ -129,6 +129,12 @@ document.getElementById("data").innerHTML =
     <script src="opencpu/jquery-1.10.2.min.js"></script>
     <script src="opencpu/opencpu-0.4.js"></script>
     
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="jqueryui/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet" media="screen">
+
+<script src="bootstrap/js/bootstrap.js"> </script>
+<script src="jqueryui/jquery-ui-1.10.3.custom.js"> </script>
+
     <script>
     //init this script when the page has loaded
     $(document).ready(function(){
@@ -136,6 +142,10 @@ document.getElementById("data").innerHTML =
         //disable the button to prevent multiple clicks
         $("#submitbutton").attr("disabled", "disabled");
         
+        
+  //optional, requires jquery-ui.
+ 	 $("#plotdiv").resizable()
+  
         //read the value for 'myname'
         var s = $("#seq").val();
         
@@ -168,7 +178,7 @@ document.getElementById("data").innerHTML =
 	</div>
     	<br>
 	<br>
-	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the peptides of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
+	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
   		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=""><br>
 	
 <br>
