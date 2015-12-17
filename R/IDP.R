@@ -53,8 +53,8 @@ rh_uncorrected <- (2.16 * sequ_ns.length ^ ((0.503-(0.11*log(1-fppii_avg)))))
 rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * sequ_ns.length^(0.503-(0.11*log(1-0.012))))
 
 idpcsv <- read.csv("https://public.opencpu.org/ocpu/github/bjr67/IDP/data/idpdata.csv", sep=",")
-pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+par(new=T)+plot(n, rh_chgcorrection, col="red")+par(new=F))
-
-pl
-invisible();}
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+ par(new=T)
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+}
 }
