@@ -152,11 +152,11 @@ document.getElementById("data").innerHTML =
         $("#submitbutton").attr("disabled", "disabled");
         
         //read the value for 'myname'
-        var myname = $("#namefield").val();
+        var s = $("#seq").val();
         
         //perform the request
-        var req = ocpu.rpc("hello", {
-          myname : myname
+        var req = ocpu.rpc("IDP", {
+          ss : s
         }, function(output){
           $("#output").text(output.message);
         });
