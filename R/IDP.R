@@ -31,10 +31,14 @@ fppii <- 0
 poss <- c("A","C","D","E","F","G","H","I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y")
 net_neg_chg <- 0
 net_pos_chg <- 0
+ippii <- c()
+indexppii <- c()
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
+append(indiv, eval(as.name(substr(sequ_ns,i,i))))
+append(indexppii, i)
 
 if (as.name(substr(sequ_ns,i,i)) == K){
 	net_neg_chg <- net_neg_chg + 1
@@ -64,6 +68,7 @@ idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.
 
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 
+par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(0,250), ylim = c(0,250))
 points(n,rh_chgcorrection, pch=19, col="red")
 invisible();
