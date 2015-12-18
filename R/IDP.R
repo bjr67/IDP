@@ -74,6 +74,8 @@ idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(0,250), ylim = c(0,250))
 points(n,rh_chgcorrection, pch=19, col="red")
+plot(indexppii,indiv)
+
 invisible();
 }
 
