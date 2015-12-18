@@ -40,8 +40,8 @@ for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
-append(indiv, eval(as.name(substr(sequ_ns,i,i))))
-append(indexppii, i)
+indiv[i] <- eval(as.name(substr(sequ_ns,i,i))))
+indexppii <- i
 
 if (as.name(substr(sequ_ns,i,i)) == K){
 	net_neg_chg <- net_neg_chg + 1
