@@ -114,26 +114,26 @@
 	(string.substring((i-1),i)) == "Y")
 	{new_work_string = new_string.concat(string.substring((i-1),i));
 	 new_string = new_work_string.trim();
-	 fppii_sum = fppii_sum + eval(string.substring((i-1),i)); }
+	 fppii_sum = fppii_sum + eval(string.substring((i-1),i));}
 
 	else if (string.substring((i-1),i) == " " ) {void(0);}
 	else {
 		alert("Please choose capital amino acid one-letter abbreviations");
 		throw new Error();}
 	}
-		
+for (i = 1; i < new_string.length + 1; i++)  {		
 // net positive charge
-		if ((string.substring((i-1),i) == "K")) {
+		if ((new_string.substring((i-1),i) == "K")) {
 			tpc = tpc + 1;}
-		if((string.substring((i-1),i) == "R")) {
+		if((new_string.substring((i-1),i) == "R")) {
 			tpc = tpc + 1;}
 // net negative charge 
-		if ((string.substring((i-1),i) == "D")) {
+		if ((new_string.substring((i-1),i) == "D")) {
                 	tnc = tnc + 1;}
-        	if((string.substring((i-1),i) == "E")) {
+        	if((new_string.substring((i-1),i) == "E")) {
                 	tnc = tnc + 1;}
-
-	var netcharge = tpc - tnc;
+}
+	var netcharge = Math.abs(tpc - tnc);
 	var fppii_avg = fppii_sum / new_string.length;
 	var rh_uncorrected = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
 	var rh_chgcorrection = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * (new_string.length^ (0.503-(0.11*Math.log(1-0.012))));
@@ -207,7 +207,7 @@ document.getElementById("data").innerHTML =
 
     <button align= "center" id="submitbutton" type="button" onclick="myFunction()">Submit</button>
     
-
+	<p id="dummy" align="center"></p>
     <p id="data" align="center"></p>
     <p id="output" align= "center"</p>
     <p id="error" align= "center"></p>
