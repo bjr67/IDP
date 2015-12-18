@@ -31,8 +31,11 @@ fppii <- 0
 poss <- c("A","C","D","E","F","G","H","I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y")
 net_neg_chg <- 0
 net_pos_chg <- 0
-indiv <- c()
-indexppii <- c()
+indivx <- c(1)
+indiv <- indivx[0]
+indexppiix <- c()
+indexppii <- indexppiix[0]
+
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
