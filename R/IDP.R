@@ -40,7 +40,7 @@ for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
-indiv[i] <- eval(as.name(substr(sequ_ns,i,i))))
+indiv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 indexppii <- i
 
 if (as.name(substr(sequ_ns,i,i)) == K){
