@@ -103,11 +103,11 @@
 	(string.substring((i-1),i)) == "V" ||
 	(string.substring((i-1),i)) == "W" ||
 	(string.substring((i-1),i)) == "Y")||
-	{new_work_string = new_string.concat(string.substring((i-1),i));
-	 new_string = new_work_string.trim();
+	{new_work_string = new_string.concat(string.substring((i-1),i))
+	 new_string = new_work_string.trim()
 	 fppii_sum = fppii_sum + eval(string.substring((i-1),i)); }
 
-	else if (string.substring((i-1),i) == " " ) {null;}
+	else if (string.substring((i-1),i) == " " ) {}
 	else {
 		document.getElementById("error").innerHTML = "Please choose capital amino acid one-letter abbreviations";}
 	}}
@@ -197,18 +197,18 @@ document.getElementById("data").innerHTML =
   <div id="header">
 		<h1>Calculation of Rh of IDPs</h1>
 	</div>
-    	<br>
+    <br>
 	<br>
 	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
-  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=" "><br>
-	
-<br>
-  
+  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=" ">
+  		<br>
+		<br>
 
     <button id="submitbutton" type="button" onclick="myFunction()">Submit</button>
     
 
-    <div id="section"><p id="data"></p>
+    <div id="section">
+    <p id="data">hh</p>
     <p id="output"></p>
     <p id="error"></p></div>
     <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
