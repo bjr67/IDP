@@ -8,6 +8,3 @@ Maintainer: Ben <bjr67@txstate.edu>/ Steven <sw50@txstate.edu>
 Description: This package predicts the contribution of polyproline-II propensities and electrostatic effects to the structure of intrinisically disordered proteins. 
 License: Apache2
 LazyData: true
-
-To enter, go to: https://public.opencpu.org/ocpu/github/bjr67/IDP/www/IDP.html
-Repository: https://github.com/bjr67/IDP.git 
