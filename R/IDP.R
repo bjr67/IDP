@@ -35,6 +35,7 @@ for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
+
 if (as.name(substr(sequ_ns,i,i)) == K){
 	net_neg_chg <- net_neg_chg + 1
 	}
@@ -42,11 +43,12 @@ else if (as.name(substr(sequ_ns,i,i)) == R){
 	net_neg_chg <- net_neg_chg + 1
 	}
 else if (as.name(substr(sequ_ns,i,i)) == D){
-	net_pos_chg <- net_pos_chg + 1}
+	net_pos_chg <- net_pos_chg + 
+	1}
 else if (as.name(substr(sequ_ns,i,i)) == E){
 	net_pos_chg <- net_pos_chg + 1
 	}
-}
+}}
 
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
