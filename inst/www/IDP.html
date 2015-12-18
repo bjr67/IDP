@@ -9,6 +9,7 @@
     background-color:black;
     color:white;
     text-align:center;
+    width: 600px;
     padding:5px;
 }
 #nav {
@@ -26,6 +27,7 @@
 }
 #footer {
     background-color:black;
+    width: 600px;
     color:white;
     clear:both;
     text-align:center;
@@ -43,6 +45,7 @@
 </style>
 
 <title>IDPs</title>
+
      <script>
 	function myFunction() {
 	//      first show relationship of AA and propensity
@@ -102,15 +105,15 @@
 	(string.substring((i-1),i)) == "T" ||
 	(string.substring((i-1),i)) == "V" ||
 	(string.substring((i-1),i)) == "W" ||
-	(string.substring((i-1),i)) == "Y")||
-	{new_work_string = new_string.concat(string.substring((i-1),i))
-	 new_string = new_work_string.trim()
+	(string.substring((i-1),i)) == "Y")
+	{new_work_string = new_string.concat(string.substring((i-1),i));
+	 new_string = new_work_string.trim();
 	 fppii_sum = fppii_sum + eval(string.substring((i-1),i)); }
 
-	else if (string.substring((i-1),i) == " " ) {}
+	else if (string.substring((i-1),i) == " " ) {void(0);}
 	else {
-		document.getElementById("error").innerHTML = "Please choose capital amino acid one-letter abbreviations";}
-	}}
+		alert("Please choose capital amino acid one-letter abbreviations");}
+	}
 		
 // net positive charge
 		if ((string.substring((i-1),i) == "K")) {
@@ -122,7 +125,7 @@
                 	tnc = tnc + 1;}
         	if((string.substring((i-1),i) == "E")) {
                 	tnc = tnc + 1;}
-}
+
 	var netcharge = tpc - tnc;
 	var fppii_avg = fppii_sum / new_string.length;
 	var rh_uncorrected = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
@@ -136,8 +139,7 @@ document.getElementById("data").innerHTML =
 "Total negative charge (D & E): " + tnc + "<br>" +
 "Net charge : " + netcharge + "<br>" +
 "Hydrodynamic Radius, uncorrected : " + rh_uncorrected + "<br>" +
-"Hydrodynamic Radius, corrected : " + rh_chgcorrection
-;}
+"Hydrodynamic Radius, corrected : " + rh_chgcorrection; }
 
 </script>
 	
@@ -207,12 +209,11 @@ document.getElementById("data").innerHTML =
     <button id="submitbutton" type="button" onclick="myFunction()">Submit</button>
     
 
-    <div id="footer">
     <p id="data"></p>
     <p id="output"></p>
-    <p id="error"></p></div>
+    <p id="error"></p>
     <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
-    <br><br><br><br><br><br><br>
+    <br>
     <div align="center" id="plotdiv"></div>
 
    
