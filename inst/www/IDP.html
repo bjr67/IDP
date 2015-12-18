@@ -33,6 +33,11 @@
     text-align:center;
     padding:5px;
 }    
+#body {
+	width: 600px;
+	text-align:left;
+	padding:5px;
+	} 
     #plotdiv {
 		margin-left: 10px;
 		margin-top: 10px;
@@ -188,7 +193,7 @@ document.getElementById("data").innerHTML =
     	#plotdiv {
     		margin-left: 10px;
     		margin-top: 10px;
-    		width: 900px;
+    		width: 800px;
     		height: 600px;
     		border: solid gray 1px;
 		}
@@ -201,7 +206,7 @@ document.getElementById("data").innerHTML =
 	</div>
     <br>
 	<br>
-	<div align="center"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> </div>
+	<div align="center" id="body"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinisically disordered protein (IDP) and this tool will calculate the length, net positive charge, net negative charge, net charge, polyproline-II helix propensities, and the hydrodynamic radius. Propensities for polyproline-II helical confirmation were used from the Hisler Data set.  </p> 
   		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=" ">
   		<br>
 		<br>
@@ -211,10 +216,10 @@ document.getElementById("data").innerHTML =
 
     <p id="data" align="center"></p>
     <p id="output" align= "center"</p>
-    <p id="error" align= "center"></p>
+    <p id="error" align= "center"></p></div>
     <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
     <br>
-    <div align="center" id="plotdiv"></div>
+    <div align="right" id="plotdiv"></div>
 
    
     
