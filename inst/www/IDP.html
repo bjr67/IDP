@@ -117,7 +117,8 @@
 
 	else if (string.substring((i-1),i) == " " ) {void(0);}
 	else {
-		alert("Please choose capital amino acid one-letter abbreviations");}
+		alert("Please choose capital amino acid one-letter abbreviations");
+		throw new Error();}
 	}
 		
 // net positive charge
@@ -216,10 +217,10 @@ document.getElementById("data").innerHTML =
 
     <p id="data" align="center"></p>
     <p id="output" align= "center"</p>
-    <p id="error" align= "center"></p></div>
-    <br><br><p>The following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
-    <br>
-    <div align="right" id="plotdiv"></div>
+    <p id="error" align= "center"></p>
+    <br><br><p><he following graph shows the measured Rh of 22 proteins and their respective number of residues. The red dot is the input sequence.</p>
+    <br></div>
+    <div align="center" id="plotdiv"></div>
 
    
     
