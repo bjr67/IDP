@@ -1,49 +1,3 @@
-setwd("~/Desktop/nanotech/")
-year <- read.csv('all_tot_ratio.csv')
-year
-year <- read.csv('by_year_states copy.csv')
-yyear
-year
-year2 <- na.rm(year)
-na.omit(year)
-na.exclude(year)
-year <- read.csv('by_year_states.csv')
-year
-hist(year)
-hist(year$Year)
-barplot(year)
-barplot(year$Year)
-barplot(year$X.fem_ON)
-library(ggplot2)
-ggplot(mtcars, aes(factor(cyl), fill=factor(am))) + geom_bar() + facet_grid(am~vs)
-barplot(year$X.fem_ON)
-par(mfrow=c(2,2,))
-par(mfrow=c(2,2))
-barplot(year$X.fem_ON, xlab = "Year")
-mtcars$gear
-counts <- table(mtcars$gear)
-counts
-barplot(year$X.fem_ON, year$X.fem_QC, main = "% Female Author", xlab = "Year")
-par(mfrow=c(1,1))
-barplot(year$X.fem_ON, year$X.fem_QC, main = "% Female Author", xlab = "Year")
-plot(year$Year)
-plot(year$Year, year$X.fem_ON)
-plot(year$Year, year$X.fem_ON, year$X.fem_QC)
-plot(year$Year, year$X.fem_ON)
-xspline(year$Year, year$X.fem_ON)
-barplot(year$X.fem_ON, xlab = "Year")
-table(mtcars$vs, mtcars$gear)
-table(year$Year, year$X.fem_ON)
-table(year$Year, year$X.fem_ON, year$X.fem_QC)
-c <- table(year$Year, year$X.fem_ON, year$X.fem_QC)
-boxplot(c)
-boxplot(c, beside=TRUE)
-names(year$X.fem_ON) <- c(year$Year)
-_
-+
-barplot(year$X.fem_ON)
-barplot(year$X.fem_ON, las = 2)
-mids <- barplot(year$X.fem_ON, xlab="Year")
 axis(1,at=mids, labels= c(year$Year))
 axis(1,at=mids/3, labels= c(year$Year))
 mids <- barplot(year$X.fem_ON, xlab="Year")
@@ -187,28 +141,190 @@ function (myname = "") #
     }#
     list(message = paste("hello", myname, "! This is", R.Version()$version.string))#
 }
-setwd("~/Desktop/IDP/")
-setwd("~/Desktop/IDP/data/")
-idp <- read.csv("idpdata.csv", sep",")
-idp <- read.csv("idpdata.csv", sep=",")
-idp
-plot(N,Rh)
-plot(idp$N,idp$Rh)
-plot(idp$N,idp$Rh, points(19))
-plot(idp$N,idp$Rh, points(19))
-plot(idp$N,idp$Rh)+ points(19)
-plot(idp$N,idp$Rh)+ pch(19)
-plot(idp$N,idp$Rh,pch(19))
-plot(idp$N,idp$Rh,pch=19)
-plot(idp$N,idp$Rh,pch=19, xlab= "N", ylab="Rh")
-plot(idp$N,idp$Rh,pch=19, xlab= "N", ylab="Rh")
+(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+#
+par(new=T)+#
+plot(n, rh_chgcorrection, col="red")+#
+)
+(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+#
+par(new=T)+#
+plot(n, rh_chgcorrection, col="red")+
+)
+(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+#
+par(new=T)+#
+plot(n, rh_chgcorrection, col="red")
+)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+par(new=T)+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F))
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+par(new=T)+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+setwd(
+"~/Desktop/IDP/data/")
+idpcsv <- read.csv("idpdata.csv")
+idpcsv
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+par(new=T)+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+n
+n <- 3
+rh_chg_correction <- rh
+rh_chg_correction <- 50
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")+par(new=T)+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh",par(new=T))+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh",par(new=T))plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh"par(new=T))plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh"par(new=T))plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")+par(new=F)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
 par(new=T)
-plot(idp$N,idp$Rh,pch=19, xlab= "N", ylab="Rh")
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")
+rh_chgcorrection <- 50
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh")
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch="19")
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
 par(new=T)
-plot(idp$N, idp$Rh),pch=19, col="red" xlab= "N", ylab="Rh")
-plot(idp$N, idp$Rh,pch=19, col="red" xlab= "N", ylab="Rh")
-plot(idp$N, idp$Rh,pch=19, col="red", xlab= "N", ylab="Rh")
-dd <- 3 +
-4+
-5
-dd
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19)
+clear
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+par(new=T)
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19)
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+par(new=T)
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+pl <- plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+> par(new=T)#
+> plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+pl
+pl <- plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+par(new=T)#
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+pl <- plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+par(new=T)#
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n"))
+pl <- plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+par(new=T)#
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+pl
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+par(new=T)#
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n"))
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+par(new=T)#
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")))
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")par(new=T)#
+plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")))
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+par(new=T)
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") par(new=T)
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh"); par(new=T)
+pl <- (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") + par(new=T)
++ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+> par(new=T)#
+> plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+> plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message
+message = [plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")]
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n"))
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")#
+ par(new=T)#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+par(new=T)
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") \n#
+ par(new=T) \n#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") \n#
+ par(new=T) "\n"#
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = (plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") +"\n"#
+ par(new=T) #
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = print(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") #
+ par(new=T) #
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n"))
+message = print(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") #
+ par(new=T) #
+ plot(n, rh_chgcorrection, col="red", xlab="N",ylab="Rh", pch=19, xaxt="n", yaxt="n")
+message = print(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+par(new=T)
+print(plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh"))
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+points(n,rh_chgcorrection)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+points(n,rh_chgcorrection, col="red, pch=19")
+points(n,rh_chgcorrection, col="red", pch=19)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") +
+points(n,rh_chgcorrection, col="red", pch=19)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") +
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh") +
+l
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+points(n,rh_chgcorrection, col="red", pch=19)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+n
+rh_chg_correction
+rh_chg_correction <- 40
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+points(n,rh_chgcorrection, col="red", pch=19)
+n<- 150
+points(n,rh_chgcorrection, col="red", pch=19)
+rh_chgcorrection <- 40
+points(n,rh_chgcorrection, col="red", pch=19)
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+points(n,rh_chgcorrection, col="red", pch=19)
+rh_chgcorrection <- (2.16 * sequ_ns.length ^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * sequ_ns.length^(0.503-(0.11*log(1-0.012))))
+seq_ns <-"AAAABBBCC"
+seq_ns.legnth
+nchar("seq_ns")
+fppii_avg <- 20
+netcharge <- 20
+rh_chgcorrection <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * n^(0.503-(0.11*log(1-0.012))))
+fppii_avg <- 0.5
+rh_chgcorrection <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * n^(0.503-(0.11*log(1-0.012))))
+rh_chg_correction
+par(mai = rep(.1,4), pin = c(0.5, 0.3))
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+par(mai=rep(1,40), pin = c(5,3))
+par(mai=rep(0.1,4), pin = c(5,3))
+plot(idpcsv$N,idpcsv$Rh, pch=19, xlab="N", ylab = "Rh")
+idpn = c(93,93,93,73,89,97,110,202,168,97,198,260,73,87,94,136,140,189,206,146,170,202)#
+idprh = c(32.4,30.4,27.4,23.8,28,25.7,33.7,44.3,35,28,45,49,24,24.8,24.52,28.1,28.2,32,39.7,32.9,38.3,39.7,rh_chgcorrection)#
+idpnc = c(15,15,15,14,19,29,43,29,16,15,19,28,6,4,4,9,9,5,14,4,10,1)#
+idpneg = c(17,17,17,17,21,31,53,38,23,23,15,51,14,9,10,14,24,30,43,10,26,27)#
+idppos = c(2,2,2,3,2,2,10,9,7,8,34,23,8,13,14,23,15,25,29,6,16,26)#
+idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.37,0.363,0.412,0.356,0.403,0.374,0.364,0.351,0.376,0.39,0.413,fppii_avg)#
+#
+idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
+idpn = c(93,93,93,73,89,97,110,202,168,97,198,260,73,87,94,136,140,189,206,146,170,202)
+idprh = c(32.4,30.4,27.4,23.8,28,25.7,33.7,44.3,35,28,45,49,24,24.8,24.52,28.1,28.2,32,39.7,32.9,38.3,39.7)#
+#
+idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
+idprh = c(32.4,30.4,27.4,23.8,28,25.7,33.7,44.3,35,28,45,49,24,24.8,24.52,28.1,28.2,32,39.7,32.9,38.3,39.7)
+idpn = c(93,93,93,73,89,97,110,202,168,97,198,260,73,87,94,136,140,189,206,146,170,202)#
+idprh = c(32.4,30.4,27.4,23.8,28,25.7,33.7,44.3,35,28,45,49,24,24.8,24.52,28.1,28.2,32,39.7,32.9,38.3,39.7)#
+idpnc = c(15,15,15,14,19,29,43,29,16,15,19,28,6,4,4,9,9,5,14,4,10,1)#
+idpneg = c(17,17,17,17,21,31,53,38,23,23,15,51,14,9,10,14,24,30,43,10,26,27)#
+idppos = c(2,2,2,3,2,2,10,9,7,8,34,23,8,13,14,23,15,25,29,6,16,26)#
+idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.37,0.363,0.412,0.356,0.403,0.374,0.364,0.351,0.376,0.39,0.413)#
+#
+idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
+idp.df
+plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(0,150), ylim = c(0,50))
+points(50, 0.5, pch=20)
