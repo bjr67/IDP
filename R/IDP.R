@@ -88,7 +88,7 @@ else if (as.name(substr(sequ_ns,i,i)) == Y){
 	col[i]="orange"}
 else if (as.name(substr(sequ_ns,i,i)) == W){
 	col[i]="orange"}
-}}
+}}}
 
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
