@@ -1,0 +1,175 @@
+A
+par(mfrow=c(2,1))
+plot(9,2)
+plot(9,3)
+mtcars
+plot(mtcars$mpg, mtcars$cyl)
+par(mfrow=c(2,1))
+plot(mtcars$mpg, mtcars$cyl)
+points(5,20, col="red")
+points(20,5, col="red")
+points(20,5, col="red")
+plot(mtcars$mpg, mtcars$cyl)
+par(mfrow=c(2,1))
+plot(mtcars$mpg, mtcars$cyl)
+points(20,5, col="red")
+plot(mtcars$mpg, mtcars$cyl)
+par(mfrow=c(2,1))
+abline(v=2.5,col=3,lty=3)
+plot(mtcars$mpg, mtcars$cyl)
+abline(v=20,col=3,lty=3)
+abline(h=20,col=3,lty=3)
+plot(mtcars$mpg, mtcars$cyl)
+abline(h=6,col=3,lty=3)
+a <- c(1,2,3,4)
+a
+append(a,5)
+a <- c()
+a
+append(a,5)
+a
+plot(a)
+plot(a.df)
+a <- c(1,2,3,4)
+a.df <- data.frame(a)
+a.df
+plot(a.df)
+a.df(index)
+b <- (a,b,c,d)
+b <- (0.25,0.5, .75, 1)
+b <- c(0.25,0.5, 0.75, 1)
+b
+a <- cbind(1,1:7)
+a
+m <- cbind(1,1:7)
+m
+m<- cbind(m, 8:14)[,c(1,3,2])]
+m<- cbind(m, 8:14)[,c(1,3,2]]
+m<- cbind(m, 8:14)[,c(1,3,2]
+m<- cbind(m, 8:14)[,c(1,3,2)]
+m
+m <- cbind(0,1:7)
+m
+seq = c(rand(50))
+seq = c(randu(50)
+)
+seq = c(rnorm(40))
+seq
+seq.df <- data.frame(seq)
+seq.df
+seq.df <- cbind(1, 1:nchar(seq))
+seq.df
+seq.df <- data.frame(seq)
+seq
+i <- nchar(seq)
+i
+i <- nchar(seq.df)
+i
+i <- nchar(1:seq)
+indiv <- c()
+append(indiv,1)
+append(ddddd,4)
+v <- c(4,4,4)
+v
+x <- v[0]
+x
+plot(v)
+b <- c(1,2,3)
+plot(v,b)
+v <- c(7,2,1)
+plot(v,b)
+indivx <-c(1)
+indiv <- indivx[0]
+INDIV
+indiv
+for (i in c(1:10)){}
+for (i in c(1:10)){append indiv, i}
+for (i in c(1:10)){append(indiv, i)}
+indiv
+for (i in c(1:10)){print(i))}
+for (i in c(1:10)){print(i)}
+for (i in c(1:10)){indiv[i] <- indiv[i]}
+indiv
+vector <- character()
+vector
+for (i in c(1:10)){vector[i] <- vector[i]}
+vector
+for (i in c(1:10)){indiv[i] <- values[i]}
+for (i in c(1:10)){indiv[i] <- i}
+indiv
+for (i in c(3:10)){indiv[i] <- i}
+indiv
+for (i in c(3:10)){vector[i] <- i}
+vector
+mean(indiv)
+5.5
+smoothspline(indiv)
+smooth.spline(indiv)
+smooth.spline(indiv)
+plot(smooth.spline(indiv))
+plot(smooth.spline(indiv, rnorm(10))
+)
+a <- rnorm(10)
+b <- rnorm(10)
+plot(a,b)
+lines(stats::lowess(cars))
+lines(stats::lowess(a,b))
+a
+a
+a
+plot(a,b)
+xspline(a,b)
+plot(a,b, type='l')
+lo <- loess(a~b)
+plot(a,b)
+lines(predict(lo), col='red', lwd=2)
+plot(a)
+lo <- loess(a)
+lo <- loess(a~c(1:10))
+plot(a)
+lines(predict(lo),col="red",lwd=2)
+?smooth
+plot(lo)
+lines(predict(lo),col="red",lwd=2)
+plot(a)
+lines(predict(lo),col="red",lwd=2)
+pairs(mat1)
+require(car)
+pairs(mat1)
+pairs(matl)
+pairs(mat1,panel=panel.car,pch=".",col="blue")
+plot(a)
+abline(lsfit(a),col="red")
+abline(lsfit(a,c(1:10)),col="red")
+plot(a)
+plot(a, c(1:10))
+abline(lsfit(a,c(1:10)),col="red")
+n = 2
+if (n < 10) { print n- 1 }
+if (n < 10) { print(n-1) }
+if (n < 10) { print(n-1) }
+a
+b
+c
+seq
+x5 <- sample(1:10, 40, replace=T)
+x5
+n <- 15
+x <- rnorm(n)
+y <- rnorm(n)
+plot(x,y)
+pnt <- identify(x,y, plot=F)
+oref
+oref
+oref#
+#
+r 3
+oref#
+#
+r 3#
+''
+oref#
+#
+r 3#
+''#
+q()

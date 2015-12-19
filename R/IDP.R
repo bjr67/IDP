@@ -35,8 +35,9 @@ indivx <- c(1)
 indiv <- indivx[0]
 indexppiix <- c()
 indexppii <- indexppiix[0]
+col <- c()
 
-for (i in c(1:nchar(sequ_ns))){
+for (i in c(1:nch;ar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
@@ -45,16 +46,48 @@ indexppii[i] <- i
 
 if (as.name(substr(sequ_ns,i,i)) == K){
 	net_neg_chg <- net_neg_chg + 1
-	}
+	col[i] = "red"}
 else if (as.name(substr(sequ_ns,i,i)) == R){
 	net_neg_chg <- net_neg_chg + 1
-	}
+	col[i] = "red"}
 else if (as.name(substr(sequ_ns,i,i)) == D){
-	net_pos_chg <- net_pos_chg + 
-	1}
+	net_pos_chg <- net_pos_chg + 1
+	col[i]="blue"}
 else if (as.name(substr(sequ_ns,i,i)) == E){
 	net_pos_chg <- net_pos_chg + 1
-	}
+	col[i]="blue"}
+else if (as.name(substr(sequ_ns,i,i)) == G){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == A){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == P){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == V){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == L){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == I){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == M){
+	col[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == S){
+	col[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == T){
+	col[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == C){
+	col[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == N){
+	col[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == Q){
+	col[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == H){
+	col[i]="red"}
+else if (as.name(substr(sequ_ns,i,i)) == F){
+	col[i]="orange"}
+else if (as.name(substr(sequ_ns,i,i)) == Y){
+	col[i]="orange"}
+else if (as.name(substr(sequ_ns,i,i)) == W){
+	col[i]="orange"}
 }}
 
 fppii_avg <- fppii/(nchar(sequ_ns))
@@ -82,7 +115,10 @@ par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
 points(n,rh_chgcorrection, pch=19, col="red")
 plot(indexppii,indiv, xlim=c(0, (n+1)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
-abline(h = mean(indiv), col="blue")
+for (i in col) {
+points(indexppii[i],indiv[i], col=col[i])
+}
+abline(h = mean(indiv), col="black")
 invisible();
 }
 
