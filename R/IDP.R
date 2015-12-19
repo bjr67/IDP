@@ -104,7 +104,7 @@ idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.
 
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 if (n < 70) {nliml <- n-2}
-else {nliml <- 70}
+else if (n >=70) {nliml <- 70}
 if (n > 262) {nlimu <- n+2}
 else {nlimu <- 262}
 if (rh_chgcorrection < 22) {rhliml <- rh_chgcorrection - 2}
