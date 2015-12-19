@@ -37,7 +37,7 @@ indexppiix <- c()
 indexppii <- indexppiix[0]
 col <- c()
 
-for (i in c(1:nch;ar(sequ_ns))){
+for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 		
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
