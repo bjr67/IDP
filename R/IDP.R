@@ -102,6 +102,7 @@ idpneg = c(17,17,17,17,21,31,53,38,23,23,15,51,14,9,10,14,24,30,43,10,26,27)
 idppos = c(2,2,2,3,2,2,10,9,7,8,34,23,8,13,14,23,15,25,29,6,16,26)
 idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.37,0.363,0.412,0.356,0.403,0.374,0.364,0.351,0.376,0.39,0.413)
 
+in.df <- data.frame(indexppii,indiv,col)
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 if (n < 70) {nliml <- n-2}
 else {nliml <- 70}
@@ -114,7 +115,7 @@ else {rhlimu <- 51}
 par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
 points(n,rh_chgcorrection, pch=19, col="red")
-plot(indexppii,indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
+plot(in.df$indexppii,in.df$indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), col=in.df$col, pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
 
 abline(h = mean(indiv), col="black")
 invisible();
