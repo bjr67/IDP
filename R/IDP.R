@@ -36,10 +36,11 @@ indiv <- indivx[0]
 indexppiix <- c()
 indexppii <- indexppiix[0]
 col <- c()
+col <- col[0]
 
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
-		
+
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
 indiv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 indexppii[i] <- i
