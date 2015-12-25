@@ -5,6 +5,7 @@
 #' @export
 #' @param seqnumer of random values
 IDP <- function(ss = ""){
+library(graphics)
 sequ <- toupper(ss)
 sequ_ns <- gsub(" ", "", sequ, fixed = TRUE)
 A <- 0.37
@@ -116,7 +117,7 @@ else {rhlimu <- 51}
 par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
 points(n,rh_chgcorrection, pch=19, col="red")
-plot(in.df$indexppii,in.df$indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, col="red", xlab = "Amino Acid Residue", ylab = "PPii propensity")
+plot(in.df$indexppii,in.df$indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, col=coli, xlab = "Amino Acid Residue", ylab = "PPii propensity")
 #abline(h = mean(indiv), col="black")
 invisible();
 }
