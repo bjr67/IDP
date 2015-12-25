@@ -118,7 +118,7 @@ plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nl
 points(n,rh_chgcorrection, pch=19, col="red")
 plot(in.df$indexppii,in.df$indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
 for (i in c(1:nchar(sequ_ns))){
-points(indexppii[i],indiv[i], col=coli[i],pch=19)
+points(indexppii[i],indiv[i], col=coli[i],pch=19)}
 #abline(h = mean(indiv), col="black")
 invisible();
 }
