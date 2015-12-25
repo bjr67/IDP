@@ -48,16 +48,16 @@ indexppii[i] <- i
 
 if (as.name(substr(sequ_ns,i,i)) == K){
 	net_neg_chg <- net_neg_chg + 1
-	coli[i] = "red"}
+	coli[i] <- "red"}
 else if (as.name(substr(sequ_ns,i,i)) == R){
 	net_neg_chg <- net_neg_chg + 1
-	coli[i] = "red"}
+	coli[i] <- "red"}
 else if (as.name(substr(sequ_ns,i,i)) == D){
 	net_pos_chg <- net_pos_chg + 1
-	coli[i]="blue"}
+	coli[i]<- "blue"}
 else if (as.name(substr(sequ_ns,i,i)) == E){
 	net_pos_chg <- net_pos_chg + 1
-	coli[i]="blue"}
+	coli[i]<-"blue"}
 else if (as.name(substr(sequ_ns,i,i)) == G){
 	coli[i]="black"}
 else if (as.name(substr(sequ_ns,i,i)) == A){
