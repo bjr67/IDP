@@ -36,7 +36,7 @@ indiv <- indivx[0]
 indexppiix <- c()
 indexppii <- indexppiix[0]
 coli <- c()
-coli <- col[0]
+
 
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
