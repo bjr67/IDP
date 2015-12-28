@@ -93,7 +93,7 @@ else if (as.name(substr(sequ_ns,i,i)) == W){
 }}
 seqv <- c()
 for (i in c(1:nchar(sequ_ns))){
-append(seqv, seq_ns[i])}
+append(seqv, sequ_ns[i])}
 
 
 fppii_avg <- fppii/(nchar(sequ_ns))
