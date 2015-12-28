@@ -91,6 +91,10 @@ else if (as.name(substr(sequ_ns,i,i)) == Y){
 else if (as.name(substr(sequ_ns,i,i)) == W){
 	coli[i]="orange"}
 }}
+seqv <- c()
+for (i in c(1:nchar(sequ_ns))){
+append(seqv, seq_ns[i])}
+
 
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
@@ -115,6 +119,7 @@ else {rhliml <- 22}
 if (rh_chgcorrection > 51) {rhlimu <- rh_chgcorrection +2}
 else {rhlimu <- 51}
 
+seq_ns
 
 par(mfrow=c(3,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
