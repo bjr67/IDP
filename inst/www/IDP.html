@@ -38,10 +38,20 @@
 	text-align:left;
 	padding:5px;
 	} 
-    #plotdiv {
+#plotdiv {
 		margin-left: 10px;
 		margin-top: 10px;
 		float:left;
+		width: 600px;
+		height: 600px;
+		border: solid gray 1px;
+		}
+		
+}
+#plotdivi {
+		margin-left: 10px;
+		margin-top: 10px;
+		float: right;
 		width: 600px;
 		height: 600px;
 		border: solid gray 1px;
@@ -192,6 +202,37 @@ document.getElementById("data").innerHTML =
     });
     </script>
 
+<script>
+    //init this script when the page has loaded
+    $(document).ready(function(){
+      $("#submitbutton").on("click", function(){
+        //disable the button to prevent multiple clicks
+        $("#submitbutton").attr("disabled", "disabled");
+        
+        //read the value for 'seq'
+        var ss = $("#seq").val();
+        
+        //create plot area, plotdiv
+        var req = $("#plotdiv2").rplot("IDP2", {
+        ss : ss
+        })
+        
+        req.fail(function(){
+        	alert(req.responseText);
+        })
+        
+        //if R returns an error, alert the error message
+        req.fail(function(){
+          alert("Server error: " + req.responseText);
+        });
+        
+        //after request complete, re-enable the button 
+        req.always(function(){
+          $("#submitbutton").removeAttr("disabled")
+        });
+      });
+    });
+    </script>
   </head>
     
 <body>
@@ -216,7 +257,7 @@ document.getElementById("data").innerHTML =
     <br>The second graph shows the ffppii propensity distribution, based on the location of the residue and the fppii value at that residue.</p>
     <br></div>
     <div align="center" id="plotdiv"></div>
-
+	<div align="center" id="plotdiv2"></div>
    
     
   </body>
