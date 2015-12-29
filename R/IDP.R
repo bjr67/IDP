@@ -123,11 +123,10 @@ count <- table(seqv)
 max.count <-  max(count)
 c.df <- data.frame(count)
 
-par(mfrow=c(3,1))
+par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
 points(n,rh_chgcorrection, pch=19, col="red")
 plot(indexppii,indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
 abline(h = mean(indiv), col="black")
-barplot(c.df$Freq, names = c.df$seq)
 invisible();
 }
