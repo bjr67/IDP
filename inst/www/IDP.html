@@ -198,6 +198,38 @@ document.getElementById("data").innerHTML =
       });
     });
     </script>
+    
+    <script>
+    //init this script when the page has loaded
+    $(document).ready(function(){
+      $("#submitbutton").on("click", function(){
+        //disable the button to prevent multiple clicks
+        $("#submitbutton").attr("disabled", "disabled");
+        
+        //read the value for 'seq'
+        var ss = $("#seq").val();
+        
+        //create plot area, plotdiv
+        var req = $("#plotdiv1").rplot("IDP2", {
+        ss : ss
+        })
+        
+        req.fail(function(){
+        	alert(req.responseText);
+        })
+        
+        //if R returns an error, alert the error message
+        req.fail(function(){
+          alert("Server error: " + req.responseText);
+        });
+        
+        //after request complete, re-enable the button 
+        req.always(function(){
+          $("#submitbutton").removeAttr("disabled")
+        });
+      });
+    });
+    </script>
 
   </head>
     

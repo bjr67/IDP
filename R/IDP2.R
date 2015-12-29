@@ -4,7 +4,7 @@
 #' 
 #' @export
 #' @param seqnumer of random values
-IDP2 <- function(ss = ""){
+IDP <- function(ss = ""){
 library(graphics)
 sequ <- toupper(ss)
 sequ_ns <- gsub(" ", "", sequ, fixed = TRUE)
@@ -91,6 +91,10 @@ else if (as.name(substr(sequ_ns,i,i)) == Y){
 else if (as.name(substr(sequ_ns,i,i)) == W){
 	coli[i]="orange"}
 }}
+seqv <- c()
+for (i in c(1:nchar(sequ_ns))){
+append(seqv, sequ_ns[i])}
+
 
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
@@ -115,12 +119,14 @@ else {rhliml <- 22}
 if (rh_chgcorrection > 51) {rhlimu <- rh_chgcorrection +2}
 else {rhlimu <- 51}
 
+count <- table(seqv)
+max.count <-  max(count)
+c.df <- data.frame(count)
 
 par(mfrow=c(2,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
 points(n,rh_chgcorrection, pch=19, col="red")
-plot(indexppii,indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity",col=coli)
-
-#abline(h = mean(indiv), col="black")
+plot(indexppii,indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
+abline(h = mean(indiv), col="black")
 invisible();
 }
