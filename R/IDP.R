@@ -126,7 +126,7 @@ par(mfrow=c(3,1))
 plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
 points(n,rh_chgcorrection, pch=19, col="red")
 plot(indexppii,indiv, xlim=c(0.5, (n+0.5)), ylim=c(0,1.05), pch=19, xlab = "Amino Acid Residue", ylab = "PPii propensity")
-barplot(count, xlab = "Amino Acid", ylab = "Number", xlim  = c("A", "D", "E","T", "P"), ylim = c(0,n))
+barplot(count, xlab = "Amino Acid", ylab = "Number", ylim = c(0,n))
 #abline(h = mean(indiv), col="black")
 invisible();
 }
