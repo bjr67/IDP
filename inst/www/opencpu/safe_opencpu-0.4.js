@@ -260,49 +260,24 @@
         style: "width: 100%; height:100%; min-width: 100px; min-height: 100px; position:relative; background-repeat:no-repeat; background-size: 100% 100%;"
       }).appendTo(targetdiv).css("background-image", "none");
       
-      var plotdiv1 = $('<div />').attr({
-        style: "width: 100%; height:100%; min-width: 100px; min-height: 100px; position:relative; background-repeat:no-repeat; background-size: 100% 100%;"
-      }).appendTo(targetdiv).css("background-image", "none");
-      
       var spinner = $('<span />').attr({
         style : "position: absolute; top: 20px; left: 20px; z-index:1000; font-family: monospace;" 
       }).text("loading...").appendTo(plotdiv);
-      
-      var spinner1 = $('<span />').attr({
-        style : "position: absolute; top: 20px; left: 20px; z-index:1000; font-family: monospace;" 
-      }).text("loading...").appendTo(plotdiv1);
 
       var pdf = $('<a />').attr({
         target: "_blank",        
         style: "position: absolute; top: 10px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
       }).text("pdf").appendTo(plotdiv);
-      
-      var pdf1 = $('<a />').attr({
-        target: "_blank",        
-        style: "position: absolute; top: 10px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
-      }).text("pdf").appendTo(plotdiv1);
-
 
       var svg = $('<a />').attr({
         target: "_blank",
         style: "position: absolute; top: 30px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
       }).text("svg").appendTo(plotdiv);
-      
-      var svg1 = $('<a />').attr({
-        target: "_blank",
-        style: "position: absolute; top: 30px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
-      }).text("svg").appendTo(plotdiv1);
 
       var png = $('<a />').attr({
         target: "_blank",
         style: "position: absolute; top: 50px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
       }).text("png").appendTo(plotdiv);  
-      
-        var png1 = $('<a />').attr({
-        target: "_blank",
-        style: "position: absolute; top: 50px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
-      }).text("png").appendTo(plotdiv1);  
-      
       
       function updatepng(){
         if(!Location) return;
