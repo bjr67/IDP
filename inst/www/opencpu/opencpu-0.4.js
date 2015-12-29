@@ -298,11 +298,6 @@
         style: "position: absolute; top: 50px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
       }).text("png").appendTo(plotdiv);  
       
-        var png1 = $('<a />').attr({
-        target: "_blank",
-        style: "position: absolute; top: 50px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
-      }).text("png").appendTo(plotdiv1);  
-      
       
       function updatepng(){
         if(!Location) return;
