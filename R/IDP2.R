@@ -4,9 +4,9 @@
 #' 
 #' @export
 #' @param seqnumer of random values
-IDP2 <- function(ss = ""){
+IDP2 <- function(sss = ""){
 library(graphics)
-sequ <- toupper(ss)
+sequ <- toupper(sss)
 sequ_ns <- gsub(" ", "", sequ, fixed = TRUE)
 A <- 0.37
 C <- 0.25

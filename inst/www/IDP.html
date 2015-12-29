@@ -207,11 +207,11 @@ document.getElementById("data").innerHTML =
         $("#submitbutton").attr("disabled", "disabled");
         
         //read the value for 'seq'
-        var ss = $("#seq").val();
+        var sss = $("#seq").val();
         
         //create plot area, plotdiv
         var req = $("#plotdiv1").rplot("IDP2", {
-        ss : ss
+        sss : sss
         })
         
         req.fail(function(){
