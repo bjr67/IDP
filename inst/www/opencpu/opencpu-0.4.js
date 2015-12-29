@@ -266,32 +266,19 @@
       
       var spinner = $('<span />').attr({
         style : "position: absolute; top: 20px; left: 20px; z-index:1000; font-family: monospace;" 
-      }).text("loading...").appendTo(plotdiv);
-      
-      var spinner1 = $('<span />').attr({
-        style : "position: absolute; top: 20px; left: 20px; z-index:1000; font-family: monospace;" 
-      }).text("loading...").appendTo(plotdiv1);
+      }).text("loading...").appendTo(plotdiv);   
 
       var pdf = $('<a />').attr({
         target: "_blank",        
         style: "position: absolute; top: 10px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
       }).text("pdf").appendTo(plotdiv);
       
-      var pdf1 = $('<a />').attr({
-        target: "_blank",        
-        style: "position: absolute; top: 10px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
-      }).text("pdf").appendTo(plotdiv1);
-
 
       var svg = $('<a />').attr({
         target: "_blank",
         style: "position: absolute; top: 30px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
       }).text("svg").appendTo(plotdiv);
       
-      var svg1 = $('<a />').attr({
-        target: "_blank",
-        style: "position: absolute; top: 30px; right: 10px; z-index:1000; text-decoration:underline; font-family: monospace;"
-      }).text("svg").appendTo(plotdiv1);
 
       var png = $('<a />').attr({
         target: "_blank",
