@@ -40,33 +40,33 @@ seqv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 
 coli <- c()
 
-A <- "black"
-C <- "yellow"
-D <- "blue"
-E <- "blue"
-F <- "brown"
-G <- "black"
-H <- "red"
-I <- "black"
-K <- "red"
-L <- "black"
-M <- "black"
-N <- "yellow"
-P <- "black"
-Q <- "yellow"
-R <- "red"
-S <- "yellow"
-T <- "yellow"
-V <- "black"
-W <- "brown"
-Y <- "brown"
+A <- 1
+C <- 2
+D <- 4
+E <- 4
+F <- 5
+G <- 2
+H <- 3
+I <- 1
+K <- 3
+L <- 1
+M <- 1
+N <- 2
+P <- 1
+Q <- 2
+R <- 3
+S <- 2
+T <- 2
+V <- 1
+W <- 5
+Y <- 5
 
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 coli[i] <- eval(as.name(substr(sequ_ns,i,i)))
 }
 }
-
+palette(c("black", "yellow", "blue", "orange", "red"))
 df <- data.frame(seqv, coli)
 
 #plothere
