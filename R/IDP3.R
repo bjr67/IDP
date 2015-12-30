@@ -88,6 +88,8 @@ else if (as.name(substr(sequ_ns,i,i)) == W){
 	coli[i]="orange"}
 }}
 #plothere
+par(mfrow=c(2,1))
+plot(seqv, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
 plot(seqv, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
 invisible();
 }
