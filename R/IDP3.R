@@ -37,7 +37,7 @@ name <- c()
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 seqv[i] <- eval(as.name(substr(sequ_ns,i,i)))
-name[i] <- as.name(substr(sequ_ns,i,i))}}
+name[i] <- substr(sequ_ns,i,i)}}
 
 seqdf <- data.frame(seqv)
 for (i in seqdf$seqv){
