@@ -32,12 +32,61 @@ Y <- 5.63
 poss <- c("A","C","D","E","F","G","H","I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y")
 seqv <- c()
 seqv <- seqv[0]
+name <- c()
 
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 seqv[i] <- eval(as.name(substr(sequ_ns,i,i)))
-}}
+name[i] <- as.name(substr(sequ_ns,i,i)))}}
 
+seqdf <- data.frame(seqv)
+for (i in seqdf$seqv){
+if (is.element(substr(sequ_ns,i,i), poss)){
+if (as.name(substr(sequ_ns,i,i)) == K){
+	net_neg_chg <- net_neg_chg + 1
+	coli[i] <- "red"}
+else if (as.name(substr(sequ_ns,i,i)) == R){
+	net_neg_chg <- net_neg_chg + 1
+	coli[i] <- "red"}
+else if (as.name(substr(sequ_ns,i,i)) == D){
+	net_pos_chg <- net_pos_chg + 1
+	coli[i]<- "blue"}
+else if (as.name(substr(sequ_ns,i,i)) == E){
+	net_pos_chg <- net_pos_chg + 1
+	coli[i]<-"blue"}
+else if (as.name(substr(sequ_ns,i,i)) == G){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == A){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == P){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == V){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == L){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == I){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == M){
+	coli[i]="black"}
+else if (as.name(substr(sequ_ns,i,i)) == S){
+	coli[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == T){
+	coli[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == C){
+	coli[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == N){
+	coli[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == Q){
+	coli[i]="yellow"}
+else if (as.name(substr(sequ_ns,i,i)) == H){
+	coli[i]="red"}
+else if (as.name(substr(sequ_ns,i,i)) == F){
+	coli[i]="orange"}
+else if (as.name(substr(sequ_ns,i,i)) == Y){
+	coli[i]="orange"}
+else if (as.name(substr(sequ_ns,i,i)) == W){
+	coli[i]="orange"}
+}}
 #plothere
 plot(seqv, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
 invisible();
