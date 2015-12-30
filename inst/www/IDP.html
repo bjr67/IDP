@@ -142,7 +142,7 @@ for (i = 1; i < new_string.length + 1; i++)  {
 	var netcharge = Math.abs(tpc - tnc);
 	var fppii_avg = fppii_sum / new_string.length;
 	var rh_uncorrected = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
-	var rh_chgcorrection = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * (new_string.length^ (0.503-(0.11*Math.log(1-0.012))));
+	var rh_chgcorrection = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + (0.181*netcharge - 0.114 * 2.16 * (new_string.length^ (0.503-(0.11*Math.log(1-0.012)))));
 	var chg_contribution = 0.17158*netcharge - 0.07296 * 2.16 * (new_string.length^ (0.503-(0.11*Math.log(1-0.012))))
 	var percentchg = Math.abs(chg_contribution)/(Math.abs(chg_contribution) + rh_chgcorrection)
 	// output
