@@ -38,7 +38,38 @@ if (is.element(substr(sequ_ns,i,i), poss)){
 seqv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 }}
 
+coli <- c()
+
+A <- "black"
+C <- "yellow"
+D <- "blue"
+E <- "blue"
+F <- "orange"
+G <- "black"
+H <- "red"
+I <- "black"
+K <- "red"
+L <- "black"
+M <- "black"
+N <- "yellow"
+P <- "black"
+Q <- "yellow"
+R <- "red"
+S <- "yellow"
+T <- "yellow"
+V <- "black"
+W <- "orange"
+Y <- "orange"
+
+for (i in c(1:nchar(sequ_ns))){
+if (is.element(substr(sequ_ns,i,i), poss)){
+coli[i] <- eval(as.name(substr(sequ_ns,i,i)))
+}
+}
+
+df <- data.frame(seqv, coli)
+
 #plothere
-plot(seqv, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
+plot(df$seqv, col = df$coli, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
 invisible();
 }
