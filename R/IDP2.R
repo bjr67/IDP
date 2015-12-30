@@ -66,7 +66,7 @@ if (is.element(substr(sequ_ns,i,i), poss)){
 coli[i] <- eval(as.name(substr(sequ_ns,i,i)))
 }
 }
-palette(c("black", "yellow", "blue", "orange", "red"))
+palette(c("black", "cyan", "blue", "orange", "red"))
 df <- data.frame(seqv, coli)
 
 #plothere
