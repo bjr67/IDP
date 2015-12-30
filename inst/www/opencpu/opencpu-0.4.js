@@ -264,6 +264,10 @@
         style: "width: 100%; height:100%; min-width: 100px; min-height: 100px; position:relative; background-repeat:no-repeat; background-size: 100% 100%;"
       }).appendTo(targetdiv).css("background-image", "none");
       
+       var plotdiv2 = $('<div />').attr({
+        style: "width: 100%; height:100%; min-width: 100px; min-height: 100px; position:relative; background-repeat:no-repeat; background-size: 100% 100%;"
+      }).appendTo(targetdiv).css("background-image", "none");
+      
       var spinner = $('<span />').attr({
         style : "position: absolute; top: 20px; left: 20px; z-index:1000; font-family: monospace;" 
       }).text("loading...").appendTo(plotdiv);   
