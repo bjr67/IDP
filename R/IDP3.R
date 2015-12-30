@@ -65,7 +65,7 @@ for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
 coli[i] <- eval(as.name(substr(sequ_ns,i,i)))
 }
-
+}
 
 pidf <- data.frame(pi, name, coli)
 
