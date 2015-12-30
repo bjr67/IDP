@@ -39,6 +39,6 @@ seqv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 }}
 
 #plothere
-plot(seqv)
+plot(seqv, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
 invisible();
 }
