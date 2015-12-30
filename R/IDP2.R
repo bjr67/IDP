@@ -44,7 +44,7 @@ A <- "black"
 C <- "yellow"
 D <- "blue"
 E <- "blue"
-F <- "purple"
+F <- "white"
 G <- "black"
 H <- "red"
 I <- "black"
@@ -58,8 +58,8 @@ R <- "red"
 S <- "yellow"
 T <- "yellow"
 V <- "black"
-W <- "purple"
-Y <- "purple"
+W <- "white"
+Y <- "white"
 
 for (i in c(1:nchar(sequ_ns))){
 if (is.element(substr(sequ_ns,i,i), poss)){
@@ -70,6 +70,6 @@ coli[i] <- eval(as.name(substr(sequ_ns,i,i)))
 df <- data.frame(seqv, coli)
 
 #plothere
-plot(df$seqv, col = df$coli, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
+plot(df$seqv, col = df$coli, ylab = "PPii Propensity", xlab = "Amino Acid Residue", pch=19)
 invisible();
 }
