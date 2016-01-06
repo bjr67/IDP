@@ -90,7 +90,7 @@ else if (as.name(substr(sequ_ns,i,i)) == Y){
 	coli[i]="orange"}
 else if (as.name(substr(sequ_ns,i,i)) == W){
 	coli[i]="orange"}
-}}}
+}}
 seqv <- c()
 for (i in c(1:nchar(sequ_ns))){
 append(seqv, sequ_ns[i])}
