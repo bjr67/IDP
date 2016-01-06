@@ -99,7 +99,7 @@ append(seqv, sequ_ns[i])}
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
 netcharge <- abs(net_neg_chg - net_pos_chg)
-rh <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * n^(0.503-(0.11*log(1-0.012))))
+rh <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - (0.07296) * 2.16 * n^(0.503-(0.11*log(1-0.012))))
 chg_con <- 0.17158*netcharge
 r_coil <- 2.16* n^((0.503-(0.11*log(1-0.12))))
 idpn = c(93,93,93,73,89,97,110,202,168,97,198,260,73,87,94,136,140,189,206,146,170,202)
@@ -119,7 +119,7 @@ if (rh < 22) {rhliml <- rh - 2}
 else {rhliml <- 22}
 if (rh > 51) {rhlimu <- rh +2}
 else {rhlimu <- 51}
-v <- c(chg_con, r_coil,rh)
+v <- c(chg_con, r_coil, rh)
 barplot(v, horiz=TRUE)
 invisible();
 }
