@@ -50,10 +50,10 @@ if (eval(as.name(substr(sequ_ns,i,i))) == 0.56){
 	net_neg_chg = net_neg_chg + 1
 	coli[i] <- "red"}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.38)){
-	net_neg_chg <- net_neg_chg + 1
+	net_neg_chg = net_neg_chg + 1
 	coli[i] = "red"}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.30)){
-	net_pos_chg <- net_pos_chg + 1
+	net_pos_chg = net_pos_chg + 1
 	coli[i]= "blue"}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.42)){
 	net_pos_chg = net_pos_chg + 1
