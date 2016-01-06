@@ -40,57 +40,22 @@ coli <- c()
 colaa <- c()
 
 for (i in c(1:nchar(sequ_ns))){
-if (is.element(substr(sequ_ns,i,i), poss)){
+
 
 fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
 indiv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 indexppii[i] <- i
 
 if (eval(as.name(substr(sequ_ns,i,i))) == 0.56){
-	net_neg_chg = net_neg_chg + 1
-	coli[i] <- "red"}
+	net_neg_chg = net_neg_chg + 1}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.38)){
-	net_neg_chg = net_neg_chg + 1
-	coli[i] = "red"}
+	net_neg_chg = net_neg_chg + 1}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.30)){
-	net_pos_chg = net_pos_chg + 1
-	coli[i]= "blue"}
+	net_pos_chg = net_pos_chg + 1}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.42)){
-	net_pos_chg = net_pos_chg + 1
-	coli[i]<-"blue"}
-else if (as.name(substr(sequ_ns,i,i)) == G){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == A){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == P){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == V){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == L){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == I){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == M){
-	coli[i]="black"}
-else if (as.name(substr(sequ_ns,i,i)) == S){
-	coli[i]="yellow"}
-else if (as.name(substr(sequ_ns,i,i)) == T){
-	coli[i]="yellow"}
-else if (as.name(substr(sequ_ns,i,i)) == C){
-	coli[i]="yellow"}
-else if (as.name(substr(sequ_ns,i,i)) == N){
-	coli[i]="yellow"}
-else if (as.name(substr(sequ_ns,i,i)) == Q){
-	coli[i]="yellow"}
-else if (as.name(substr(sequ_ns,i,i)) == H){
-	coli[i]="red"}
-else if (as.name(substr(sequ_ns,i,i)) == F){
-	coli[i]="orange"}
-else if (as.name(substr(sequ_ns,i,i)) == Y){
-	coli[i]="orange"}
-else if (as.name(substr(sequ_ns,i,i)) == W){
-	coli[i]="orange"}
-}}
+	net_pos_chg = net_pos_chg + 1}
+
+}
 seqv <- c()
 for (i in c(1:nchar(sequ_ns))){
 append(seqv, sequ_ns[i])}
