@@ -46,16 +46,16 @@ fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
 indiv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 indexppii[i] <- i
 
-if (as.name(substr(sequ_ns,i,i)) == K){
+if (eval(as.name(substr(sequ_ns,i,i))) == 0.56){
 	net_neg_chg <- net_neg_chg + 1
 	coli[i] <- "red"}
-else if (as.name(substr(sequ_ns,i,i)) == R){
+else if (eval(as.name(substr(sequ_ns,i,i))) == 0.38)){
 	net_neg_chg <- net_neg_chg + 1
 	coli[i] <- "red"}
-else if (as.name(substr(sequ_ns,i,i)) == D){
+else if (eval(as.name(substr(sequ_ns,i,i)) == 0.30)){
 	net_pos_chg <- net_pos_chg + 1
 	coli[i]<- "blue"}
-else if (as.name(substr(sequ_ns,i,i)) == E){
+else if (eval(as.name(substr(sequ_ns,i,i)) == 0.42)){
 	net_pos_chg <- net_pos_chg + 1
 	coli[i]<-"blue"}
 else if (as.name(substr(sequ_ns,i,i)) == G){
