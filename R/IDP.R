@@ -77,7 +77,7 @@ in.df = data.frame(indexppii,indiv)
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 
 
-v <- c(chg_con)
+v <- c(chg_con, r_coil, rh)
 barplot(v, horiz=TRUE)
 invisible();
 }
