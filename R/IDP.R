@@ -46,7 +46,7 @@ fppii <- fppii + eval(as.name(substr(sequ_ns,i,i)))
 indiv[i] <- eval(as.name(substr(sequ_ns,i,i)))
 indexppii[i] <- i
 
-if (eval(as.name(substr(sequ_ns,i,i))) == 0.56){
+if (eval(as.name(substr(sequ_ns,i,i)) == 0.56)){
 	net_neg_chg = net_neg_chg + 1}
 else if (eval(as.name(substr(sequ_ns,i,i)) == 0.38)){
 	net_neg_chg = net_neg_chg + 1}
