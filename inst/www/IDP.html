@@ -152,10 +152,9 @@ for (i = 1; i < new_string.length + 1; i++)  {
 	var netcharge = Math.abs(tpc - tnc);
 	var fppii_avg = fppii_sum / new_string.length;
 	var rh = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + (0.173*netcharge - 0.073 * 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-0.012)))));
-	var chg_contribution = 0.17158*netcharge
-	var percentchg = Math.abs(chg_contribution)/rh
-
-
+	var chg_contribution = 0.17158*netcharge;
+	var percentchg = Math.abs(chg_contribution)/rh;
+	var rcoil = 2.16 * Math.pow(new_string.length,(0.503-(0.11*Math.log(1-0.012))));
 
 	// output
 document.getElementById("data").innerHTML = 
@@ -165,10 +164,10 @@ document.getElementById("data").innerHTML =
 "Total positive charge (K & R): " + tpc + "<br>" +
 "Total negative charge (D & E): " + tnc + "<br>" +
 "Net charge : " + netcharge + "<br>" +
-"Random coil hydrodynamic radius, RH : " + rh_uncorrected + "<br>" +
 "Hydrodynamic Radius, Rh : " + rh + "<br>" + 
-"Percent of Charge Contribution : " + percentchg*100 + "<br>" +
-;}
+"Random coil hydrodynamic radius, Rh : " + rcoil + "<br>" +
+"Charge contribution Rh : " + chg_contribution + "<br>" + 
+"Percent of Charge Contribution : " + percentchg*100 + "<br>" ;}
 
 </script>
 	
