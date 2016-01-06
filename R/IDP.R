@@ -99,8 +99,9 @@ append(seqv, sequ_ns[i])}
 fppii_avg <- fppii/(nchar(sequ_ns))
 n <- nchar(sequ_ns)
 netcharge <- abs(net_neg_chg - net_pos_chg)
-rh_chgcorrection <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * n^(0.503-(0.11*log(1-0.012))))
-
+rh <- (2.16 * n^((0.503-(0.11*log(1-fppii_avg)))) + 0.17158*netcharge - 0.07296 * 2.16 * n^(0.503-(0.11*log(1-0.012))))
+chg_con <- 0.17158*netcharge
+r_coil <- 2.16* n^((0.503-(0.11*log(1-0.12))))
 idpn = c(93,93,93,73,89,97,110,202,168,97,198,260,73,87,94,136,140,189,206,146,170,202)
 idprh = c(32.4,30.4,27.4,23.8,28,25.7,33.7,44.3,35,28,45,49,24,24.8,24.52,28.1,28.2,32,39.7,32.9,38.3,39.7)
 idpnc = c(15,15,15,14,19,29,43,29,16,15,19,28,6,4,4,9,9,5,14,4,10,1)
@@ -114,16 +115,11 @@ if (n < 70) {nliml <- n-2}
 else {nliml <- 70}
 if (n > 262) {nlimu <- n+2}
 else {nlimu <- 262}
-if (rh_chgcorrection < 22) {rhliml <- rh_chgcorrection - 2}
+if (rh < 22) {rhliml <- rh - 2}
 else {rhliml <- 22}
-if (rh_chgcorrection > 51) {rhlimu <- rh_chgcorrection +2}
+if (rh > 51) {rhlimu <- rh +2}
 else {rhlimu <- 51}
-
-count <- table(seqv)
-max.count <-  max(count)
-c.df <- data.frame(count)
-
-plot(idp.df$idpn, idp.df$idprh, pch=19, xlab="N", ylab = "Rh", xlim = c(nliml,nlimu), ylim = c(rhliml,rhlimu))
-points(n,rh_chgcorrection, pch=19, col="red")
+v <- c(chg_con, r_coil,rh)
+barplot(v, horiz=TRUE)
 invisible();
 }
