@@ -151,37 +151,12 @@ for (i = 1; i < new_string.length + 1; i++)  {
 // net charge, average ppii, uncorrected and corrected rh, the contribution of charge and percent of charge
 	var netcharge = Math.abs(tpc - tnc);
 	var fppii_avg = fppii_sum / new_string.length;
-	var rh_uncorrected = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg))));
-	var rh_chgcorrection = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + (0.173*netcharge - 0.073 * 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-0.012)))));
-	var chg_contribution = 0.17158*netcharge - 0.07296 * 2.16 * (new_string.length^ (0.503-(0.11*Math.log(1-0.012))))
-	var percentchg = Math.abs(chg_contribution)/rh_chgcorrection
+	var rh = 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-fppii_avg)))) + (0.173*netcharge - 0.073 * 2.16 * Math.pow(new_string.length, (0.503-(0.11*Math.log(1-0.012)))));
+	var chg_contribution = 0.17158*netcharge
+	var percentchg = Math.abs(chg_contribution)/rh
 
-// pi calculation, https://www.anaspec.com/html/pK_n_pl_Values_of_AminoAcids.html
-	var pi = 0.00
-			var A = 6.11;
-        	var C = 5.02;
-        	var D = 2.98;
-        	var E = 3.08;
-        	var F = 5.91;
-        	var G = 6.06;
-        	var H = 7.64;
-        	var I = 6.04;
-        	var K = 9.47;
-        	var L = 6.04;
-        	var M = 5.74;
-        	var N = 10.76;
-        	var P = 6.30;
-        	var Q = 5.65;
-        	var R = 10.76;
-        	var S = 5.68;
-        	var T = 5.60;
-         	var V = 6.02;
-        	var W = 5.88;
-        	var Y = 5.63;
 
-for (i = 1; i < new_string.length + 1; i++)  {
-pi = pi + eval(new_string.substring((i-1),i));}
-pi = pi/new_string.length
+
 	// output
 document.getElementById("data").innerHTML = 
 "Sequence : " + new_string + "<br>" + 
@@ -190,10 +165,10 @@ document.getElementById("data").innerHTML =
 "Total positive charge (K & R): " + tpc + "<br>" +
 "Total negative charge (D & E): " + tnc + "<br>" +
 "Net charge : " + netcharge + "<br>" +
-"Hydrodynamic Radius, uncorrected : " + rh_uncorrected + "<br>" +
-"Hydrodynamic Radius, corrected : " + rh_chgcorrection + "<br>" + 
+"Random coil hydrodynamic radius, RH : " + rh_uncorrected + "<br>" +
+"Hydrodynamic Radius, Rh : " + rh + "<br>" + 
 "Percent of Charge Contribution : " + percentchg*100 + "<br>" +
-"Isoelectric Point, pi : " + pi ;}
+;}
 
 </script>
 	
