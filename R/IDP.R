@@ -111,14 +111,7 @@ idpfppii = c(0.489,0.458,0.283,0.45,0.328,0.335,0.363,0.402,0.378,0.353,0.399,0.
 
 in.df = data.frame(indexppii,indiv)
 idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
-if (n < 70) {nliml <- n-2}
-else {nliml <- 70}
-if (n > 262) {nlimu <- n+2}
-else {nlimu <- 262}
-if (rh < 22) {rhliml <- rh - 2}
-else {rhliml <- 22}
-if (rh > 51) {rhlimu <- rh +2}
-else {rhlimu <- 51}
+
 
 v <- c(chg_con)
 barplot(v, horiz=TRUE)
