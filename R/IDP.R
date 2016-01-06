@@ -120,7 +120,7 @@ else {rhliml <- 22}
 if (rh > 51) {rhlimu <- rh +2}
 else {rhlimu <- 51}
 
-v <- c(rh)
+v <- c(rh, r_coil, chg_con)
 barplot(v, horiz=TRUE)
 invisible();
 }
