@@ -42,6 +42,7 @@
 	padding:5px;
 	} 
 #plotdiv {
+		display:none;
 		margin: auto;
 		float:none;
 		width: 500px;
@@ -49,6 +50,7 @@
 		border: solid gray 1px;
 		}
 #plotdiv1 {
+		display: none;
 		margin: auto;
 		float:none;
 		width: 500px;
@@ -56,6 +58,7 @@
 		border: solid gray 1px;
 }
 #plotdiv2 {
+		display: none;
 		margin: auto;
 		float:none;
 		width: 500px;
@@ -67,7 +70,11 @@
 <title>IDP Structure</title>
 
      <script>
-	function myFunction() {
+    function someFunctions(){
+    myFunction();
+	showdiv();
+	}
+		function myFunction() {
 	//      first show relationship of AA and propensity
         	var A = 0.37;
         	var C = 0.25;
@@ -276,6 +283,14 @@ document.getElementById("data").innerHTML =
       });
     });
     </script>
+    
+    <script>
+    //init this script when the page has loaded
+function showdiv() {
+   document.getElementById('plotdiv').style.display = "block";
+   document.getElementById('plotdiv1').style.display = "block";
+}
+    </script>
 
   </head>
 
@@ -284,7 +299,7 @@ document.getElementById("data").innerHTML =
 	</div>
     <br>
 	<br>
-	<div align="left" id="nav">
+<div align="left" id="nav">
 IDP tool<br>
 About<br>
 Citation information<br>
@@ -296,7 +311,7 @@ Database Values
   		<br>
 		<br>
 
-    <button align= "center" id="submitbutton" type="button" onclick="myFunction()">Submit</button>
+    <button align= "center" id="submitbutton" type="button" onclick="someFunctions()" onclick="ShowDiv()" >Submit</button>
     
 	<p id="dummy" align="center"></p>
     <p id="data" align="center"></p>
