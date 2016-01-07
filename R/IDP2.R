@@ -70,6 +70,6 @@ palette(c("black", "cyan", "red", "blue", "orange"))
 df <- data.frame(seqv, coli)
 
 #plothere
-plot(df$seqv, ylab = "PPii Propensity", xlab = "Amino Acid Residue", pch=19)
+plot(df$seqv, ylab = "PPii Propensity", xlab = "Amino Acid Residue", main="PPii propensity by Residue", pch=19)
 invisible();
 }
