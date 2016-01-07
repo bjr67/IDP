@@ -78,6 +78,6 @@ idp.df = data.frame(idpn, idprh, idpnc, idpneg, idppos, idpfppii)
 
 
 v <- c(chg_con, r_coil, rh)
-barplot(v, horiz=TRUE, names.arg=c("Charge Rh", "Random Coil Rh", "Total Rh"))
+barplot(v, horiz=TRUE, names.arg=c("Charge Rh", "Random Coil Rh", "Total Rh"), main="Composition of Rh")
 invisible();
 }

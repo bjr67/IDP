@@ -71,6 +71,6 @@ pidf <- data.frame(pi, name, coli)
 
  
 #plothere
-plot(pidf$pi, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
+#plot(pidf$pi, ylab = "Isoelectric point", xlab = "Amino Acid Residue", pch=19)
 invisible();
 }
