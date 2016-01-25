@@ -1,0 +1,11 @@
+Possible Acronyms
+
+	DIPSO  Disordered Protein Structure Origins
+	DISCO 	  DIsordered Structural COntributors 
+ 	ICON 	  Idp CONtributors 
+ 	ISC 	  Idp Structural Contributors
+ 	POI 	  Physical Origins Idp
+ 	SORI 	  Structural ORigins Idp
+ 	SADI 	  StructurAl Dynamics Idp
+ 	SCRIP 	  Structural ContRibutors Idp
+ 	PHI 	  PHysical Idp

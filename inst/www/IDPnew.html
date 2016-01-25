@@ -193,7 +193,239 @@ document.getElementById("data").innerHTML =
 "Hydrodynamic Radius, Rh : " + rh + "<br>" + 
 "Random coil hydrodynamic radius, Rh : " + rcoil + "<br>" +
 "Charge contribution Rh : " + chg_contribution + "<br>" + 
-"Percent of Charge Contribution : " + percentchg*100 + "<br>" ;}
+"Percent of Charge Contribution : " + percentchg*100 + "<br>" ;
+
+// format data for bar graph (using Plotly.js)
+		
+		var seqArray = new Array(string.length);
+		var propArray = new Array(string.length);
+		var chargeArray = new Array(string.length);
+		var position = new Array(string.length);
+		var propAvg = new Array(string.length);
+		var chrgNum = new Array(string.length);
+		var chrgAvg = new Array(string.length);
+		
+		
+		for(i = 1; i < string.length+1; i++) //populate arrays
+		{
+			switch(string.substring((i-1), i))
+			{
+				case "A":
+					position[i-1] = i;
+					seqArray[i-1] = "A";
+					propArray[i-1] = A;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "C":
+					position[i-1] = i;
+					seqArray[i-1] = "C";
+					propArray[i-1] = C;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "D":
+					position[i-1] = i;
+					seqArray[i-1] = "D";
+					propArray[i-1] = D;
+					chargeArray[i-1] = 'rgba(222,45,38,0.8)';
+					chrgNum[i-1] = -1;
+					break;
+				
+				case "E":
+					position[i-1] = i;
+					seqArray[i-1] = "E";
+					propArray[i-1] = E;
+					chargeArray[i-1] = 'rgba(222,45,38,0.8)';
+					chrgNum[i-1] = -1;
+					break;
+				
+				case "F":
+					position[i-1] = i;
+					seqArray[i-1] = "F";
+					propArray[i-1] = F;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "G":
+					position[i-1] = i;
+					seqArray[i-1] = "G";
+					propArray[i-1] = G;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "H":
+					position[i-1] = i;
+					seqArray[i-1] = "H";
+					propArray[i-1] = H;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "I":
+					position[i-1] = i;
+					seqArray[i-1] = "I";
+					propArray[i-1] = I;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "K":
+					position[i-1] = i;
+					seqArray[i-1] = "K";
+					propArray[i-1] = K;
+					chargeArray[i-1] = 'rgb(49,130,189)';
+					chrgNum[i-1] = 1;
+					break;
+				
+				case "L":
+					position[i-1] = i;
+					seqArray[i-1] = "L";
+					propArray[i-1] = L;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "M":
+					position[i-1] = i;
+					seqArray[i-1] = "M";
+					propArray[i-1] = M;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "N":
+					position[i-1] = i;
+					seqArray[i-1] = "N";
+					propArray[i-1] = N;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "P":
+					position[i-1] = i;
+					seqArray[i-1] = "P";
+					propArray[i-1] = P;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "Q":
+					position[i-1] = i;
+					seqArray[i-1] = "Q";
+					propArray[i-1] = Q;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "R":
+					position[i-1] = i;
+					seqArray[i-1] = "R";
+					propArray[i-1] = R;
+					chargeArray[i-1] = 'rgb(49,130,189)';
+					chrgNum[i-1] = 1;
+					break;
+				
+				case "S":
+					position[i-1] = i;
+					seqArray[i-1] = "S";
+					propArray[i-1] = S;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "T":
+					position[i-1] = i;
+					seqArray[i-1] = "T";
+					propArray[i-1] = T;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "V":
+					position[i-1] = i;
+					seqArray[i-1] = "V";
+					propArray[i-1] = V;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "W":
+					position[i-1] = i;
+					seqArray[i-1] = "W";
+					propArray[i-1] = W;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+				
+				case "Y":
+					position[i-1] = i;
+					seqArray[i-1] = "Y";
+					propArray[i-1] = Y;
+					chargeArray[i-1] = 'rgba(204,204,204,1)';
+					chrgNum[i-1] = 0;
+					break;
+			}
+		}
+		
+		for(k = 1; k < string.length-1; k++)
+		{
+			propAvg[k-1] = (propArray[k-1]+propArray[k]+propArray[k+1])/3;
+			var locAvg = chrgNum[k-1]+chrgNum[k]+chrgNum[k+1];
+			if(locAvg > 0) // positive
+			{
+				chrgAvg[k-1] = 'rgb(49,130,189)';
+			}
+			else if(locAvg < 0) // negative
+			{
+				chrgAvg[k-1] = 'rgba(222,45,38,0.8)';
+			}
+			else // neutral
+			{
+				chrgAvg[k-1] = 'rgba(204,204,204,1)';
+			}
+		}
+		
+		var graph1Data = [
+			{
+				x: position,
+				y: propArray,
+				marker:{
+					color: chargeArray
+				},
+				type: 'bar',
+				text: seqArray,
+				hoverinfo: 'text'
+			}
+		];
+		
+		var graph1Layout = {
+			title: 'PPII Propensity vs Sequence Position'	
+		}
+		
+		Plotly.newPlot('graph1', graph1Data, graph1Layout);
+		
+		var graph2Data = [
+			{
+				x: position,
+				y: propAvg,
+				marker: {
+					color: chrgAvg
+				},
+				type: 'bar'
+			}
+		];
+		
+		var graph2Layout = {
+			title: 'Averaged PPII Propensity vs Sequence Position'
+		}
+		
+		Plotly.newPlot('graph2', graph2Data, graph2Layout);
+}
 
 </script>
 	
@@ -306,13 +538,16 @@ document.getElementById("data").innerHTML =
     
     <script>
     //init this script when the page has loaded
+    
 function showdiv() {
    document.getElementById('plotdiv').style.display = "block";
    document.getElementById('plotdiv1').style.display = "block";
 }
     </script>
 
-  </head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="jquery-1.12.0.min.js"></script>
+</head>
 
   <div align="center" id="header">
 		<h1> Structural Contributions of IDPs </h1>
@@ -326,13 +561,17 @@ function showdiv() {
 </div>
 <body>
 	<div id="section"><p> Enter a sequence of the one-letter abbreviation of the residues of an intrinsically disordered protein (IDP) and this tool will calculate the source of contributing elements to hydrodynamic radius, Rh.</p> 
-  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=" ">
+  	<form id="frm1" action="form_action.asp name= "TESTING">  		Enter IDP sequence: <input id="seq" type="text" name="IDPAA" value=" ">
+  	</form>
   		<br>
 		<br>
 
     <button align= "center" id="submitbutton" type="button" onclick="someFunctions()" onclick="ShowDiv()" >Submit</button>
     
-	<p id="dummy" align="center"></p>
+    <p id="data"></p>
+    <div id="graph1" style="width:600px;height:250px;"></div>
+    <div id="graph2" style="width:600px;height:250px;"></div>
+    <p id="dummy" align="center"></p>
     <p id="data" align="center"></p>
     <p id="output" align= "center"</p>
     <p id="error" align= "center"></p>
