@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Reads a sequence and maps the transformation from amino acid to propensity values (Hilser) -->
+	
+<style>
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+a:active {
+    text-decoration: underline;
+    color: black;
+}
+
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    width: 600px;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:600px;
+    float:left;
+    padding:10px;
+}
+#footer {
+	margin: auto;
+    background-color:black;
+    width: 600px;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}    
+#body {
+	margin: auto;
+	float:left;
+	width: 600px;
+	text-align:left;
+	padding:5px;
+	} 
+#plotdiv {
+		display:none;
+		margin: auto;
+		float:none;
+		width: 500px;
+		height: 500px;
+		border: solid gray 1px;
+		}
+#plotdiv1 {
+		display: none;
+		margin: auto;
+		float:none;
+		width: 500px;
+		height: 500px;
+		border: solid gray 1px;
+}
+#plotdiv2 {
+		display: none;
+		margin: auto;
+		float:none;
+		width: 500px;
+		height: 500px;
+		border: solid gray 1px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+} 
+</style>
+
+<title>IDP Structure</title>
+</head>
+
+  <div align="center" id="header">
+		<h1> Structural Contributions of IDPs </h1>
+	</div>
+    <br>
+	<br>
+<div align="left" id="nav">
+<a href="IDP.html"><b>IDP tool</b></a><br>
+<a href="about.html">About</a><br>
+<a href="cite.html">Citation</a><br>
+</div>
+<body>
+
+<div id="body" width: 400px;">
+<table style="width:50%">
+  <tr>
+    <td>IDP</td>
+    <td>Sequence</td>		
+  </tr>
+  <tr>
+    <td>p53(1-93)</td>
+    <td>MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPD<br>DIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPL</td>		
+  </tr>
+<tr>
+    <td>p53(1-93) ALA-</td>
+    <td>MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQGMDDLMLSPD<br>DIEQWFTEDPGPDEGPRMPEGGPPVGPGPGGPTPGGPGPGPSWPL</td>		
+  </tr>
+<tr>
+    <td>p53(1-93) PRO-</td>
+    <td>MEEGQSDGSVEGGLSQETFSDLWKLLGENNVLSGLGSQAMDDLMLSGD<br>DIEQWFTEDGGGDEAGRMGEAAGGVAGAGAAGTGAAGAGAGSWGL</td>		
+  </tr>
+<tr>
+    <td>p53 TAD</td>
+    <td>MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPD<br>DIEQWFTEDPGPDEAPRMPEAAPRV</td>		
+  </tr>
+<tr>
+    <td>Vmw65</td>
+    <td>GSAGHTRRLSTAPPTDVSLGDELHLDGEDVAMAHADALDDFDLDMLG<br>DGDSPGPGFTPHDSAPYGALDMADFEFEQMFTDALGIDEYGG</td>		
+  </tr>
+  <tr>
+    <td>Hdm2-ABD</td>
+    <td>ERSSSSESTGTPSNPDLDAGVSEHSGDWLDQDSVSDQFSVEFEVESL<br>DSEDYSLSEEGQELSDEDDEVYQVTVYQAGESDTDSFEEDPEISLADYWK</td>		
+  </tr>
+  <tr>
+    <td>prothymosin- &alpha;</td>
+    <td>MSDAAVDTSSEITTKDLKEKKEVVEEAENGRDAPANGNANEENGEQE<br>ADNEVDEEEEEGGEEEEEEEEGDGEEEDGDEDEEAESATGKRAAE<br>DDEDDDVDTKKQKTDEDD</td>		
+  </tr>
+    <tr>
+    <td>HIF1-&alpha;-403</td>
+    <td>PAAGDTIISLDFGSNDTETDDQQLEEVPLYNDVMLPSPNEKLQNINL<br>AMSPLPTAETPKPLRSSADPALNQEVALKLEPNPESLELSFTMPQ<br>IQDQTPSPSDGSTRQSSPEPNSPSEYCFYVDSDMVNEFKLELVEKLFAE<br>DTEAKNPFSTQDTDLDLEMLAPYIPMDDDFQLRSFDQLSPLESSSASPESASPQSTVTVFQ</td>		
+  </tr>
+  <tr>
+    <td>Fos-AD</td>
+    <td>GSHMSVASLDLTGGLPEVATPESEEAFTLPLLNDPEPKPSVEPVKSI<br>SSMELKTEPFDDFLFPASSRPSGSETARSVPDMDLSGSFYAADWEP<br>LHSGSLGMGPMATELEPLCTPVVTCTPSCTAYTSSFVFTYPEADSFPS<br>CAAAHRKGSSSNEPSSDSLSSPTLLAL</td>		
+  </tr>
+    <tr>
+    <td>Mlph(147-240)</td>
+    <td>RLQGGGGSEPSLEEGNGDSEQTDEDGDLDTEARDQPLNSKKKKRLLS<br>FRDVDFEEDSDHLVQPCSQTLGLSSVPESAHSLQSLSGEPYSEDTTSLEP</td>		
+  </tr>
+  <tr>
+    <td>Tau-K45</td>
+    <td>MSSPGSPGTPGSRSRTPSLPTPPTREPKKVAVVRTPPKSPSSAKSRL<br>QTAPVPMPDLKNVKSKIGSTENLKHQPGGGKVQIINKKLDLSNVQSK<br>CGSKDNIKHVPGGGSVQIVYKPVDLSKVTSKCGSLGNIHHKPGGGQV<br>EVKSEKLDFKDRVQSKIGSLDNITHVPGGGNKKIETHKLTFRENAKAKTDHGAEIVY</td>		
+  </tr>
+<tr>
+    <td>Mlph(147-403)</td>
+    <td>RLQGGGGSEPSLEEGNGDSEQTDEDGDLDTEARDQPLNSKKKKRLLS<br>FRDVDFEEDSDHLVQPCSQTLGLSSVPESAHSLQSLSGEPYSEDTTS<br>LEPEGLEETGARALGCRPSPEVQPCSPLPSGEDAHAELDSPAASCK<br>SAFGTTAMPGTDDVRGKHLPSQYLADVDTSDEDSIQGPRAASQHSKRRART<br>VPETQILELNKRMSAVEHLLVHLENTVLPPSAQEPTVETHPSADTEEETLRRRLEELTSNISGSSTSSE</td>		
+  </tr>
+  <tr>
+    <td>p57-ID</td>
+    <td>VRTSACRSLFGPVDHEELSRELQARLAELNAEDQNRWDYDFQQDMPL<br>RGPGRLQWTEVDSDSVPAFYRETVQV</td>		
+  </tr>
+  <tr>
+    <td>PDE-&gamma;</td>
+    <td>MNLEPPKAEIRSATRVMGGPVTPRKGPPKFKQRQTRQFKSKPPKKGV<br>QGFGDDIPGMEGLGTDITVICPWEAFNHLELHELAQYGII</td>		
+  </tr>
+  <tr>
+    <td>Cad136</td>
+    <td>RLEQYTSAVVGNKAAKPAKPAASDLPVPAEGVRNIKSMWEKGNVFSS<br>PGGTGTPNKETAGLKVGVSSRINEWLTKTPEGNKSPAPKPSDLRPGD<br>VSGKRNLWEKQSVEKPAASSSKVTATGKKSETNGLRQFEKEP</td>		
+  </tr>
+  <tr>
+    <td>&alpha;-synuclein</td>
+    <td>MDVFMKGLSKAKEGVVAAAEKTKQGVAEAAGKTKEGVLYVGSKTKEG<br>VVHGVATVAEKTKEQVTNVGGAVVTGVTAVAQKTVEGAGSIAAATGF<br>VKKDQLGKNEEGAPQEGILEDMPVDPDNEAYEMPSEEGYQDYEPEA</td>		
+  </tr>
+  <tr>
+    <td>CFTR-R-region</td>
+    <td>GAMESAERRNSILTETLHRFSLEGDAPVSWTETKKQSFKQTGEFGEK<br>RKNSILNPINSIRKFSIVQKTPLQMNGIEEDSDEPLERRLSLVPDSE<br>QGEAILPRISVISTGPTLQARRRQSVLNLMTHSVNQGQNIHRKTTA<br>STRKVSLAPQANLTELDIYSRRLSQETGLEISEEINEEDLKECLFDDME</td>		
+  </tr>
+  <tr>
+    <td>SNAP25</td>
+    <td>MAEDADMRNELEEMQRRADQLADESLESTRRMLQLVEESKDAGIRTL<br>VMLDEQGEQLERIEEGMDQINKDMKEAEKNLTDLGKFCGLCVCPCNK<br>LKSSDAYKKAWGNNQDGVVASQPARVVDEREQMAISGGFIRRVTND<br>ARENEMDENLEQVSGIIGNLRHMALDMGNEIDTQNRQIDRIMEKADSNKTRIDEANQRATKMLGSG</td>		
+  </tr>
+  <tr>
+    <td>ShB-C</td>
+    <td>MTLGQHMKKSSLSESSSDMMDLDDGVESTPGLTETHPGRSAVAPFLG<br>AQQQQQQPVASSLSMSIDKQLQHPLQQLTQTQLYQQQQQQQQQQQNG<br>FKQQQQQTQQQLQQQQSHTINASAAAATSGSGSSGLTMRHNNALAVSIETDV</td>		
+  </tr>
+  <tr>
+    <td>HIF1-&alpha;-530</td>
+    <td>NEFKLELVEKLFAEDTEAKNPFSTQDTDLDLEMLAPYIPMDDDFQLR<br>SFDQLSPLESSSASPESASPQSTVTVFQQTQIQEPTANATTTTATTD<br>ELKTVTKDRMEDIKILIASPSPTHIHKETTSATSSPYRDTQSRTAS<br>PNRAGKGVIEQTEKSHPRSPNVLSVALSQR</td>		
+  </tr>
+  <tr>
+    <td>Securin</td>
+    <td>MATLIYVDKENGEPGTRVVAKDGLKLGSGPSIKALDGRSQVSTPRFG<br>KTFDAPPALPKATRKALGTVNRATEKSVKTKGPLKQKQPSFSAKKMT<br>EKTVKAKSSVPASDDAYPEIEKFFPFNPLDFESFDLPEEHQIAHLP<br>LSGVPLMILDEERELEKLFQLGPPSPVKMPSPPWESNLLQSPSSILSTLDVELPPVCCDIDI</td>		
+  </tr>
+
+</table>
+</p>
+</div>
+    
+  </body>
+</html>
